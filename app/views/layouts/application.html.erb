@@ -40,27 +40,45 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Les formations<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Les écoles</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="#">Espace apprenant</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#">Espace école</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
+  </div>
+
+  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    <div class="btn-group" role="group">
+      <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon compte</button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop4" style="">
+          <% if signed_in? %>
+            <%= link_to "Mon profil", edit_user_registration_path %>
+            <br>
+            <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete%>
+          <% else %>
+            <%= link_to "Me connecter", new_user_session_path%><br>
+            <%= link_to "M'inscrire", new_user_registration_path%>
+          <% end %>
+          <% if current_user %>
+            <% if current_user.is_admin %>
+              <%= link_to "Ajouter un item", new_item_path %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
 
   <body>
-    <%= render 'filter_mode' %>
+    <%= render 'trainings/filter_mode' %>
 
     <%= yield %>
 

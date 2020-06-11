@@ -52,6 +52,7 @@ training_array = [
   {schoolID: 7, name: "Développeur Web", duration: 12, description: "Nous donnons leur chance à toutes les personnes qui montrent qu'elles ont vraiment envie. Avec ce format intensif, les demandeurs d'emploi, les 'décrocheurs scolaire' ou même les étudiants traditionnels s'y retrouvent. 3 mois intensifs pour changer de vie et devenir développeur web!", url: "https://www.lapiscine.pro/formations/developpeur/", mode: "onsite", helpForAJob: true, hours_per_day: 8}
 ]
 
+
 # Seed
 
 7.times do |i|
@@ -59,7 +60,12 @@ training_array = [
 end
 
 23.times do |i|
+<<<<<<< HEAD
   Training.create( name: training_array[i][:name], duration: training_array[i][:duration], description: training_array[i][:description], hours_per_day: training_array[i][:hours_per_day], url: training_array[i][:url], mode: training_array[i][:mode], school_id: training_array[i][:schoolID])
+=======
+  Training.create( name: training_array[i][:name], duration: training_array[i][:duration], description: training_array[i][:description], hoursPerDay: training_array[i][:hoursPerDay], url: training_array[i][:url], mode: training_array[i][:mode], school_id: training_array[i][:schoolID], tag_list: [training_array[i][:mode], training_array[i][:duration].to_s] )
+>>>>>>> 0c820ba8db2cdd2303a847e3fd22445ed5704e65
 end
+
 
 puts "Seed completed !"

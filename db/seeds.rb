@@ -60,11 +60,7 @@ training_array = [
 end
 
 23.times do |i|
-<<<<<<< HEAD
   Training.create( name: training_array[i][:name], duration: training_array[i][:duration], description: training_array[i][:description], hours_per_day: training_array[i][:hours_per_day], url: training_array[i][:url], mode: training_array[i][:mode], school_id: training_array[i][:schoolID])
-=======
-  Training.create( name: training_array[i][:name], duration: training_array[i][:duration], description: training_array[i][:description], hoursPerDay: training_array[i][:hoursPerDay], url: training_array[i][:url], mode: training_array[i][:mode], school_id: training_array[i][:schoolID], tag_list: [training_array[i][:mode], training_array[i][:duration].to_s] )
->>>>>>> 0c820ba8db2cdd2303a847e3fd22445ed5704e65
 end
 
 

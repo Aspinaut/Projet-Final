@@ -1,14 +1,14 @@
 
 
- 
+
 
 <div class="container col-12 mt-5">
   <div class="items-list d-flex flex-wrap mt-5">
   <% @trainings.each do |training|%>
       <div class="card mb-4 box-shadow m-3 border-secondary ">
         <h3 class="card-header bg-secondary"></h3>
-       
-     
+
+
 
 			<div class="card" style="width: 18rem;">
 			  <img class="card-img-top text center" src="https://miro.medium.com/max/1400/1*6h1kck2QmGaC89ERN_W3UA.jpeg" alt="Card image cap">
@@ -17,21 +17,20 @@
 			    <p class="card-text">	<%=training.description%></p>
 			  </div>
 			  <ul class="list-group list-group-flush">
-			    <li class="list-group-item"> <b> Durée:</b> <%=training.duration%> semaines</li>
-			    <li class="list-group-item"><b> Apprentissage:</b> <%=training.mode%></li>
-			    <li class="list-group-item"><b> Implication:</b> <%=training.hoursPerDay%> heures/jour</li></li>
+			    <li class="list-group-item"> <b> Durée: </b> <%=training.duration%> semaines</li>
+			    <li class="list-group-item"><b> Apprentissage: </b> <%=training.mode%></li>
+			    <li class="list-group-item"><b> Implication: </b> <%=training.hours_per_day%> heures/jour</li>
 			  </ul>
 			  <div class="card-body">
 			    <a href="#" class="card-link">Site de l'école</a>
-			 
 
-			   
+
+
 			  </div>
-			</div> 
+			</div>
 
 </div>
     <% end %>
 
 </div>
 </div>
-

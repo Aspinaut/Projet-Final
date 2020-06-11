@@ -10,10 +10,63 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_11_081327) do
+ActiveRecord::Schema.define(version: 2020_06_11_083439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.string "content"
+    t.bigint "training_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["training_id"], name: "index_comments_on_training_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "programs", force: :cascade do |t|
+    t.string "description"
+    t.string "language"
+    t.bigint "training_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["training_id"], name: "index_programs_on_training_id"
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.string "website"
+    t.integer "creation_year"
+    t.integer "campus_nb"
+    t.string "siret"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string "location"
+    t.decimal "price"
+    t.bigint "training_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["training_id"], name: "index_sessions_on_training_id"
+  end
+
+  create_table "trainings", force: :cascade do |t|
+    t.string "name"
+    t.string "duration"
+    t.string "description"
+    t.string "url"
+    t.string "mode"
+    t.boolean "help_for_a_job"
+    t.bigint "school_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_id"], name: "index_trainings_on_school_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

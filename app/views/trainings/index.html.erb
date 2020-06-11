@@ -1,4 +1,5 @@
 <h1>Trainings#index</h1>
+
 <% @trainings.each do |training|%>
-  <h3><%=training.name%></h3>
+  <h3><%=training.name%></h3><div class="btn btn-secondary"> <%=training.mode%></div>
 <% end %>

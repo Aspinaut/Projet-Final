@@ -15,6 +15,12 @@
     <div class="comment-content">
       <%= comment.content %>
     </div>
+    <% if comment.user.id == current_user.id %>
+      <%= form_tag comment_path(comment.id), method: "delete" do %>
+        <%= hidden_field_tag "training_id", @training.id %>
+        <%= hidden_field_tag "comment_id", comment.id %>
+        <%= submit_tag "Delete", {class: 'btn btn-danger'} %>
+      <% end %>
+    <% end %>
   </div>
 <% end %>
-      

@@ -53,10 +53,10 @@ training_array = [
 ]
 
 session_array = [
-  {trainingID: 2, start_date: 29/06/2020, end_date: 18/09/2020, location: "France", price: 500}
-  {trainingID: 4, start_date: 15/06/2020, end_date: 23/08/2020, location: "Paris", price: 6500}
-  {trainingID: 4, start_date: 15/06/2020, end_date: 23/08/2020, location: "Lyon", price: 6500}
-  {trainingID: 4, start_date: 15/06/2020, end_date: 23/08/2020, location: "Lisbonne", price: 6500}
+  {trainingID: 2, start_date: 2020-06-29, end_date: 2020-09-28, location: "France", price: 500}
+  {trainingID: 4, start_date: 2020-06-15, end_date: 2020-08-23, location: "Paris", price: 6500}
+  {trainingID: 4, start_date: 2020-06-15, end_date: 2020-08-23, location: "Lyon", price: 6500}
+  {trainingID: 4, start_date: 2020-06-15, end_date: 2020-08-23, location: "Lisbonne", price: 6500}
 ]
 
 program_array = [

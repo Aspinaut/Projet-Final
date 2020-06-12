@@ -1,0 +1,20 @@
+<br>
+=================================
+<br>
+==========Commentaires============
+<br>
+=================================
+<br>
+<br>
+
+<% @comments.each do |comment| %>
+  <div class="comment">
+    <div class="comment-author">
+      <%= comment.user.full_name %>
+    </div>
+    <div class="comment-content">
+      <%= comment.content %>
+    </div>
+  </div>
+<% end %>
+      

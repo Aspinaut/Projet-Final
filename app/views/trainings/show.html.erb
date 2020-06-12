@@ -1,3 +1,4 @@
+
 <p>Nom de la formation : <%= @training.name %></p> 
 <br>
 
@@ -7,3 +8,7 @@
 <p>Site de l'école : <%= @training.school.website %></p>
 <br>
 
+<div class="comments">
+  <%= render 'comments' %>
+  <%= render 'new_comment_form' %>
+</div>

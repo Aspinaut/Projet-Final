@@ -66,24 +66,15 @@
             <%= link_to "Me connecter", new_user_session_path%><br>
             <%= link_to "M'inscrire", new_user_registration_path%>
           <% end %>
-          <% if current_user %>
-            <% if current_user.is_admin %>
-              <%= link_to "Ajouter un item", new_item_path %>
-            <% end %>
-          <% end %>
         </div>
       </div>
     </div>
-  </div>
+
 </nav>
 
   <body>
-    <%= render 'trainings/filter_mode' %>
 
     <%= yield %>
-
-
-
 
   </body>
 </html>

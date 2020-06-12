@@ -13,7 +13,7 @@
         <li class="list-group-item"><b> Implication: </b> <%=training.hours_per_day%> heures/jour</li>
       </ul>
       <div class="card-body">
-        <a href="#" class="card-link">Site de l'école</a>
+        <%= link_to "En savoir plus sur la formation", training_path(training), class: "card-link" %>
       </div>
     </div>
   </div>

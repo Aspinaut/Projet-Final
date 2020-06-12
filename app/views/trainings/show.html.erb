@@ -1,10 +1,6 @@
 <%= @training.name %>
 <%= @training.school.name %>
 <div class="comments">
-  <% @comments.each do |comment| %>
-    <div class="comment">
-      <%= comment.user.full_name %>
-      <%= comment.content %>
-    </div>
-  <% end %>
+  <%= render 'comments' %>
+  <%= render 'new_comment_form' %>
 </div>

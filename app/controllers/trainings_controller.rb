@@ -34,5 +34,4 @@ class TrainingsController < ApplicationController
     @training = Training.find(params[:id])
     @comments = @training.comments
   end
-
 end

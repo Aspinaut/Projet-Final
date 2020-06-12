@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_180515) do
     t.string "name"
     t.string "duration"
     t.string "description"
-    t.float "hoursPerDay"
+    t.float "hours_per_day"
     t.string "url"
     t.string "mode"
     t.boolean "help_for_a_job"

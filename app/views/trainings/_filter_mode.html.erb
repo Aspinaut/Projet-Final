@@ -1,6 +1,4 @@
-<%= simple_form_for :search, method: "GET", url: root_path do |form|%>
+<%= simple_form_for :search, method: "GET", url: root_path, remote: true do |form|%>
   <%= form.input :modes, label: "Modes", collection: $modes, as: :check_boxes %>
-  <br>
-  <%= form.input :duration, label: "Duration", collection: $duration, as: :check_boxes %>
-  <%= form.submit "Search", class: "btn btn-primary" %>
+  <%= form.input :durations, label: "Duration", collection: $durations, as: :check_boxes %>
 <% end %>

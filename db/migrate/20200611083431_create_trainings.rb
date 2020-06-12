@@ -4,7 +4,7 @@ class CreateTrainings < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :duration
       t.string :description
-      t.float :hoursPerDay
+      t.float :hours_per_day
       t.string :url
       t.string :mode
       t.boolean :help_for_a_job

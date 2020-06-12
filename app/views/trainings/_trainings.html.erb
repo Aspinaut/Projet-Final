@@ -1,11 +1,11 @@
-    
+
 <div class="container-fluid red">
 
   <div class="container green">
-    
+
     <div class="row pt-3 m-auto yellow">
        <% @trainings.each do |training|%>
-        <article class ="col-xs-12 col-sm-12 col md-4 col-lg-4 p-2 card-index">   
+        <article class ="col-xs-12 col-sm-12 col md-4 col-lg-4 p-2 card-index">
 
 
             <div class="card card-custom bg-white border-white border-5" style="height: 450px">
@@ -29,25 +29,15 @@
 
 
             <div class="card-footer" style="background: ; border-color: ;">
-     
-              <button href="#" type="button" class="btn btn-success btn-lg btn-block">Voir la formation  </button>
+
+               <%= link_to "Voir la formation", training_path(training), class: "btn btn-success btn-lg btn-block" %>
 
 
             </div>
-          </div>     
+          </div>
         </article>
    <% end %>
      </div>
-    
+
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-

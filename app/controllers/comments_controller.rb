@@ -24,8 +24,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @training = Training.find(params[:training_id])
     @comment = Comment.find(params[:id])
+    @comment.destroy
+    flash[:success] = "The comment has been deleted."
+    redirect_to training_path(params[:training_id])
   end
 
 end

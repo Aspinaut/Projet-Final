@@ -1,4 +1,10 @@
 <div class="container col-12 mt-5">
+  <div class="text-center filters">
+    <h3>Filtres de recherche : </h3>
+    <br>
+    <%= render 'filter_mode' %>
+  </div>
+
   <div class="items-list d-flex flex-wrap mt-5 trainings">
     <%= render 'trainings', trainings: @trainings %>
 

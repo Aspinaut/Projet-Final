@@ -52,6 +52,18 @@ training_array = [
   {schoolID: 7, name: "Développeur Web", duration: 12, description: "Un programme de 490h pour devenir développeur web et changer de vie.", url: "https://www.lapiscine.pro/formations/developpeur/", mode: "onsite", helpForAJob: true, hours_per_day: 8}
 ]
 
+session_array = [
+  {trainingID: 2, start_date: 29/06/2020, end_date: 18/09/2020, location: "France", price: 500}
+  {trainingID: 4, start_date: 15/06/2020, end_date: 23/08/2020, location: "Paris", price: 6500}
+  {trainingID: 4, start_date: 15/06/2020, end_date: 23/08/2020, location: "Lyon", price: 6500}
+  {trainingID: 4, start_date: 15/06/2020, end_date: 23/08/2020, location: "Lisbonne", price: 6500}
+]
+
+program_array = [
+  {trainingID: 2, description: "Le parcours fullstack se déroule en 12 semaines. Il a pour objectif de permettre à un entrepreneur de créer son projet, à une personne en reconversion d'initier sa nouvelle carrière, ou simplement de compléter son CV pour améliorer son employabilité. Cette formation est ultra intense et vous demandera d'être disponible du lundi au vendredi de 09h00 à 20h00. Comme nous ne sommes pas une école classique, vous pourrez adapter vos horaires en fonction de vos obligations.", language: "HTML, CSS, JavaScript, Ruby, Ruby on Rails, SQL, Git, GitHub"}
+  {trainingID: 4, description: "Vous allez expérimenter une nouvelle façon d'apprendre. A La Capsule, vous apprenez en construisant vos produits tech. C'est l'approche par projet ou Project-Based Learning. À travers ces 9 projets, vous allez apprendre à coder en immersion complète, comme si vous étiez déjà développeur web ! Au rythme d'un nouveau projet par semaine, chaque jour, les nouvelles notions sont immédiatement mises en pratique au sein d’un projet qui vous suit tout au long de la semaine.", language: "JavaScript, React, React Native"}
+]
+
 
 # Seed
 
@@ -62,6 +74,15 @@ end
 23.times do |i|
   Training.create( name: training_array[i][:name], duration: training_array[i][:duration], description: training_array[i][:description], hours_per_day: training_array[i][:hours_per_day], url: training_array[i][:url], mode: training_array[i][:mode], school_id: training_array[i][:schoolID], tag_list: [training_array[i][:mode],training_array[i][:duration].to_s])
 end
+
+4.times do |i|
+  Session.create(session_array[i][:start_date], session_array[i][:end_date], session_array[i][:location], session_array[i][:price])
+end
+
+2.times do |i|
+  Program.create(program_array[i][:description], program_array[i][:language])
+end
+
 
 
 puts "Seed completed !"

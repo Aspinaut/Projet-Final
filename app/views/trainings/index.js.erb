@@ -1,0 +1,12 @@
+function replaceTrainings (innerHTML) {
+  const trainings = document.querySelector('.trainings');
+  trainings.innerHTML = innerHTML;
+}
+
+
+if ('<%= @filter %>' === "[]") {
+replaceTrainings("<%= j render 'trainings', trainings: Training.all %>");
+}
+else {
+replaceTrainings("<%= j render 'trainings', trainings: @trainings %>");
+}

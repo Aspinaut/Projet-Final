@@ -20,6 +20,30 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+
+  end
+
+  def update
+    @comments = Comment.all
+    @comment = Comment.find(params[:id])
+    @training = Training.find(@comment.training.id)
+    if current_user
+      @comment.update(content: params[:content])
+      if @comment.save
+        flash[:success] = "The comment has been edited."
+        render 'trainings/show'
+      else
+        flash[:danger] = "The comment has not been edited."
+        render 'trainings/show'
+      end
+    else
+      flash[:danger] = "Connect to edit."
+      redirect_to new_user_registration_path
+    end
+  end
+
   def index
   end
 

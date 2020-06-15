@@ -1,5 +1,5 @@
 <%= form_tag "/comments", method: "post" do %>
   <input type="text" name="content" />
-  <input type="submit" value="Ajouter le com" />
+  <input type="submit" value="Envoyer" />
   <input type="hidden" name="training_id" value="<%= @training.id %>">
 <% end %>

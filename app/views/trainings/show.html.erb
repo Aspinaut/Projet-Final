@@ -1,28 +1,26 @@
+<div class="training">
+  <div class="jumbotron">
+    <h1 class="display-3"><%= @training.name %></h1>
+    <hr class="my-4">
+    <h3 class="display-4"><%= @training.school.name %></h3>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Voir l'école</a>
+  </div>
 
-<p>Nom de la formation : <%= @training.name %></p> 
-<br>
+  <div class="comments">
+    <%= render 'comments' %>
+    <%= render 'new_comment_form' %>
+  </div>
 
-<p>Site de la formation : <%= @training.url %></p> 
-<br>
+  <p>Site de la formation : <%= @training.url %></p> 
+  <br>
 
-<p>Nom de l'école : <%= @training.school.name %></p>
-<br>
+  <% @sessions.each do |session| %>
+    <%= session.start_date %>
+    <%= session.price %>
+  <% end %>
 
-<p>Site de l'école : <%= @training.school.website %></p>
-<br>
-
-
-<% @sessions.each do |session| %>
-      <%= session.start_date %>
-      <%= session.price %>
- <% end %>
-
-
-
-
-
-
-<div class="comments">
-  <%= render 'comments' %>
-  <%= render 'new_comment_form' %>
+  <div class="comments">
+    <%= render 'comments' %>
+    <%= render 'new_comment_form' %>
+  </div>
 </div>

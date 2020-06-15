@@ -10,3 +10,51 @@
   -box-shadow: 0px 0px 20px -13px rgba(0,0,0,0.59);
 }
 
+.jumbotron {
+  background-image: url('https://i.imgur.com/IHCt1mA.jpg');
+  background-size: 100% auto;
+  height: 50vh;
+  h1, h3 {
+    color: white;
+  }
+}
+
+.comment {
+  display: flex;
+
+  flex-flow: column;
+  padding-right: 25vw;
+  margin-top: 2vh;
+
+  .comment_main {
+
+    ul {
+      list-style-type: none;
+    }
+
+    .user_avatar {
+
+    }
+
+    .comment_content {
+      width: 100vh;
+      background-color: #e6e6e6;
+    }
+
+    .comment_details {
+      list-style-type: none;
+      
+    }
+
+    .comment_buttons {
+
+    }
+  }
+}
+
+.new_comment {
+  display: flex;
+  margin-top: 2vh;
+  padding-right: 25vw;
+
+}

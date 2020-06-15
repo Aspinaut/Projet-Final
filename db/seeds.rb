@@ -77,7 +77,7 @@ end
 end
 
 4.times do |i|
-  Session.create(start_date: session_array[i][:start_date], end_date: session_array[i][:end_date], location: session_array[i][:location], price: session_array[i][:price])
+  Session.create(start_date: session_array[i][:start_date], end_date: session_array[i][:end_date], location: session_array[i][:location], price: session_array[i][:price], training_id: session_array[i][:trainingID])
 end
 
 2.times do |i|

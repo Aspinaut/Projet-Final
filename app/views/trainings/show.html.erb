@@ -24,17 +24,4 @@
     <%= render 'comments' %>
     <%= render 'new_comment_form' %>
   </div>
-
-  <p>Site de la formation : <%= @training.url %></p> 
-  <br>
-
-  <% @sessions.each do |session| %>
-    <%= session.start_date %>
-    <%= session.price %>
-  <% end %>
-
-  <div class="comments">
-    <%= render 'comments' %>
-    <%= render 'new_comment_form' %>
-  </div>
 </div>

@@ -34,4 +34,20 @@ class TrainingsController < ApplicationController
     @training = Training.find(params[:id])
     @comments = @training.comments
   end
+
+  def new
+
+  end
+
+  # modifier l'attribut "school_id" qui est par défault à 1 !!
+  def create
+    Training.create(school_id: 1, name: params[:training][:name] ,duration: params[:duration].to_i, description: params[:training][:description], hours_per_day: params[:hours_per_day].to_i,url: params[:training][:url], mode: params[:mode], help_for_a_job: true?(params[:help_for_a_job]) )
+    redirect_to '/'
+  end
+
+private 
+  def true?(obj)
+    obj == "true"
+  end
+
 end

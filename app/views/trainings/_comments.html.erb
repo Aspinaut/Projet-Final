@@ -1,33 +1,42 @@
-<br>
-=================================
-<br>
-==========Commentaires============
-<br>
-=================================
-<br>
-<br>
+<div class="my-3 p-3 bg-white rounded box-shadow">
+  <h1 class="text-center border-bottom border-gray pb-2 mb-0">Commentaires</h1>
+  <% @training.comments.each do |comment| %>
 
-<% @comments.each do |comment| %>
-  <div class="comment">
-    <div class="comment-author">
-      <%= comment.user.full_name %>
-    </div>
-    <div class="comment-content">
-      <%= comment.content %>
-    </div>
-    <% if current_user %>
-      <% if comment.user.id == current_user.id %>
-        <%= form_tag comment_path(comment.id), method: "delete" do %>
-          <%= hidden_field_tag "training_id", @training.id %>
-          <%= hidden_field_tag "comment_id", comment.id %>
-          <%= submit_tag "Delete", {class: 'btn btn-danger'} %>
+    <div class= "container-fluid comment">
+
+      <div class="comment_main">  
+        <div class="user_avatar">
+          <img data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1" alt="32x32" class="mr-2 rounded" style="width: 32px; height: 32px;" src="https://previews.123rf.com/images/salamatik/salamatik1801/salamatik180100019/92979836-ic%C3%B4ne-de-visage-anonyme-de-profil-personne-silhouette-grise-avatar-par-d%C3%A9faut-masculin-photo-placeholder-.jpg" data-holder-rendered="true">
+        </div>
+
+        <div class="comment_content">
+          <%= comment.content %>
+        </div>
+      </div>
+
+      <div class="comment_details">
+        <ul>
+          <li><i class="fa fa-calendar"></i><%= comment.updated_at.strftime('%H:%M %d/%m/%y') %></li>
+          <li><i class="fa fa-pencil"></i> <span class="user_name"><%= comment.user.full_name %></span></li>
+        </ul>
+      </div
+
+      <div class="comment_buttons">
+        <% if current_user %>
+          <% if comment.user.id == current_user.id %>
+            <%= form_tag comment_path(comment.id), method: "delete" do %>
+              <%= hidden_field_tag "training_id", @training.id %>
+              <%= hidden_field_tag "comment_id", comment.id %>
+              <%= submit_tag "Supprimer", {class: 'btn btn-danger'} %>
+            <% end %>
+            <%= form_tag edit_comment_path(comment.id), method: "get" do %>
+              <%= hidden_field_tag "training_id", @training.id %>
+              <%= hidden_field_tag "comment_id", comment.id %>
+              <%= submit_tag "Editer", {class: 'btn btn-info'} %>
+            <% end %>
+          <% end %>
         <% end %>
-        <%= form_tag edit_comment_path(comment.id), method: "get" do %>
-          <%= hidden_field_tag "training_id", @training.id %>
-          <%= hidden_field_tag "comment_id", comment.id %>
-          <%= submit_tag "Edit", {class: 'btn btn-info'} %>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
-<% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

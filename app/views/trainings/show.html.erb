@@ -6,17 +6,14 @@
     <a class="btn btn-primary btn-lg" href="#" role="button">Voir l'école</a>
   </div>
 
-  <div class="comments">
-    <%= render 'comments' %>
-    <%= render 'new_comment_form' %>
-  </div>
-
   <p>Site de la formation : <%= @training.url %></p> 
   <br>
 
   <% @sessions.each do |session| %>
-    <%= session.start_date %>
-    <%= session.price %>
+    <%= session.start_date %><br>
+    <%= session.end_date %><br>
+    <%= session.price %><br>
+    <%= session.location %><br>
   <% end %>
 
   <div class="comments">

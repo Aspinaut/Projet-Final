@@ -2,11 +2,23 @@
 <p>Nom de la formation : <%= @training.name %></p> 
 <br>
 
+<p>Site de la formation : <%= @training.url %></p> 
+<br>
+
 <p>Nom de l'école : <%= @training.school.name %></p>
 <br>
 
 <p>Site de l'école : <%= @training.school.website %></p>
 <br>
+
+
+<% @sessions.each do |session| %>
+      <%= session.start_date %>
+      <%= session.price %>
+ <% end %>
+
+
+
 
 
 

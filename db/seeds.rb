@@ -64,11 +64,11 @@ session_array = [
   {trainingID: 4, start_date: DateTime.new(2020,6,15,0,0), end_date: DateTime.new(2020,8,23,0,0), location: "Lisbonne", price: 6500}
 ]
 
-program_array = [
+
+program_array = [ 
   {trainingID: 2, description: "Le parcours fullstack se déroule en 12 semaines. Il a pour objectif de permettre à un entrepreneur de créer son projet, à une personne en reconversion d'initier sa nouvelle carrière, ou simplement de compléter son CV pour améliorer son employabilité. Cette formation est ultra intense et vous demandera d'être disponible du lundi au vendredi de 09h00 à 20h00. Comme nous ne sommes pas une école classique, vous pourrez adapter vos horaires en fonction de vos obligations.", language: "HTML, CSS, JavaScript, Ruby, Ruby on Rails, SQL, Git, GitHub"},
   {trainingID: 4, description: "Vous allez expérimenter une nouvelle façon d'apprendre. A La Capsule, vous apprenez en construisant vos produits tech. C'est l'approche par projet ou Project-Based Learning. À travers ces 9 projets, vous allez apprendre à coder en immersion complète, comme si vous étiez déjà développeur web ! Au rythme d'un nouveau projet par semaine, chaque jour, les nouvelles notions sont immédiatement mises en pratique au sein d’un projet qui vous suit tout au long de la semaine.", language: "JavaScript, React, React Native"}
 ]
-
 
 # Seed
 

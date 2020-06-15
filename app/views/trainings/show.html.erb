@@ -7,14 +7,25 @@
   </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+>>>>>>> 3d066e73801a805aa5d0932a5037a143f0134e92
   <p>Site de la formation : <%= @training.url %></p> 
   <br>
 
   <% @sessions.each do |session| %>
+<<<<<<< HEAD
+    <%= session.price %>
+    <%= session.location %>
+    <%= session.start_date %>
+    <%= session.end_date %>
+=======
     <%= session.start_date %><br>
     <%= session.end_date %><br>
     <%= session.price %><br>
     <%= session.location %><br>
+>>>>>>> 3d066e73801a805aa5d0932a5037a143f0134e92
 =======
   <p>Site de la formation : <%= @training.url %></p>
   <br>
@@ -28,7 +39,11 @@
     <% end %>
   <% else %>
     <p>Pas de sessions de prévues...</p>
+<<<<<<< HEAD
+>>>>>>> 91dc9e7689e9230c2e9f13d2edf3995fba7c9334
+=======
 >>>>>>> 71266e64e186c3b905df0f19876885b05ffac242
+>>>>>>> 3d066e73801a805aa5d0932a5037a143f0134e92
   <% end %>
 
   <div class="comments">

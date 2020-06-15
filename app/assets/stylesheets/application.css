@@ -58,3 +58,10 @@
   width: 100px;
   height: 100px;
 }
+
+.navbar_profile_picture {
+  margin-right: 1vw;
+  border-radius: 50%;
+  width: 2vw;
+  height: 4vh;
+}

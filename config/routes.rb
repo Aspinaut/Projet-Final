@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :users, :controllers => {:registrations => "registrations"}
+  resources :users, only: [:edit] do
+    resources :pictures, only: [:create]
+  end
   root 'trainings#index'
   resources :trainings, :comments
 

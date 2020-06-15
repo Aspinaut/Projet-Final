@@ -6,9 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'time'
+
 # Delete the content of the actual db
 School.destroy_all
 Training.destroy_all
+Session.destroy_all
+Program.destroy_all
 
 # Reset the counters to 0
 ActiveRecord::Base.connection.tables.each do |t|
@@ -53,10 +57,11 @@ training_array = [
 ]
 
 session_array = [
-  {trainingID: 2, start_date: 2020-06-29, end_date: 2020-9-18, location: "France", price: 500},
-  {trainingID: 4, start_date: 2020-06-15, end_date: 2020-8-23, location: "Paris", price: 6500},
-  {trainingID: 4, start_date: 2020-06-15, end_date: 2020-8-23, location: "Lyon", price: 6500},
-  {trainingID: 4, start_date: 2020-06-15, end_date: 2020-8-23, location: "Lisbonne", price: 6500}
+  {trainingID: 1, start_date: DateTime.new(2020,6,29,0,0), end_date: DateTime.new(2020,9,18,0,0), location: "France", price: 500},
+  {trainingID: 2, start_date: DateTime.new(2020,6,29,0,0), end_date: DateTime.new(2020,9,18,0,0), location: "France", price: 500},
+  {trainingID: 4, start_date: DateTime.new(2020,6,15,0,0), end_date: DateTime.new(2020,8,23,0,0), location: "Paris", price: 6500},
+  {trainingID: 4, start_date: DateTime.new(2020,6,15,0,0), end_date: DateTime.new(2020,8,23,0,0), location: "Lyon", price: 6500},
+  {trainingID: 4, start_date: DateTime.new(2020,6,15,0,0), end_date: DateTime.new(2020,8,23,0,0), location: "Lisbonne", price: 6500}
 ]
 
 program_array = [

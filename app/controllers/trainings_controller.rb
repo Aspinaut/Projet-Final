@@ -32,6 +32,7 @@ class TrainingsController < ApplicationController
 
   def show
     @training = Training.find(params[:id])
+    @sessions = @training.sessions
     @comments = @training.comments
   end
 end

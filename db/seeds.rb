@@ -58,6 +58,7 @@ session_array = [
   {trainingID: 4, start_date: 2020-06-15, end_date: 2020-8-23, location: "Paris", price: 6500},
   {trainingID: 4, start_date: 2020-06-15, end_date: 2020-8-23, location: "Lyon", price: 6500},
   {trainingID: 4, start_date: 2020-06-15, end_date: 2020-8-23, location: "Lisbonne", price: 6500}
+]
 
 
 program_array = [ 

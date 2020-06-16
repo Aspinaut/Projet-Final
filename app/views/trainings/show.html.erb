@@ -6,15 +6,18 @@
     <a class="btn btn-primary btn-lg" href="#" role="button">Voir l'école</a>
   </div>
 
-  <p>Site de la formation : <%= @training.url %></p>
+  <p>Site de la formation : <%= @training.url %></p> 
   <br>
+
 
   <% if @sessions.count > 0 %>
     <% @sessions.each do |session| %>
-      <p><%= "La session commmence le #{session.start_date}" %></p>
-      <p><%= "La session finit le #{session.end_date}" %></p>
+      <% if session.start_date && session.end_date %>
+        <p><%= "La session commmence le #{session.start_date.strftime('%d/%m/%y')}" %></p>
+        <p><%= "La session finit le #{session.end_date.strftime('%d/%m/%y')}" %></p>
+      <% end %>
       <p><%= "Lieu : #{session.location}" %></p>
-      <p><%= "Prix : #{session.price}" %></p>
+      <p><%= "Prix : #{session.price} €" %></p>
     <% end %>
   <% else %>
     <p>Pas de sessions de prévues...</p>

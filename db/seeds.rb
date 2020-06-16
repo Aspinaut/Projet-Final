@@ -76,6 +76,13 @@ session_array = [
   {trainingID: 7, start_date: DateTime.new(2020,10,5,0,0), end_date: DateTime.new(2021,3,8,0,0), location: "Lille", price: 6000},
   {trainingID: 6, start_date: DateTime.new(2020,7,6,0,0), end_date: DateTime.new(2020,9,4,0,0), location: "Bordeaux", price: 6000},
   {trainingID: 7, start_date: DateTime.new(2020,10,3,0,0), end_date: DateTime.new(2021,3,6,0,0), location: "Bordeaux", price: 6000},
+  {trainingID: 8, start_date: DateTime.new(2020,7,13,0,0), end_date: DateTime.new(2020,12,21,0,0), location: "à distance", price: 6500},
+  {trainingID: 8, start_date: DateTime.new(2020,8,24,0,0), end_date: DateTime.new(2021,2,9,0,0), location: "à distance", price: 6500},
+  {trainingID: 8, start_date: DateTime.new(2020,9,14,0,0), end_date: DateTime.new(2021,3,4,0,0), location: "à distance", price: 6500},
+  {trainingID: 8, start_date: DateTime.new(2020,10,26,0,0), end_date: DateTime.new(2021,4,12,0,0), location: "à distance", price: 6500},
+  {trainingID: 9, start_date: DateTime.new(2020,8,24,0,0), end_date: DateTime.new(2021,2,9,0,0), location: "à distance", price: 6500},
+  {trainingID: 9, start_date: DateTime.new(2020,10,5,0,0), end_date: DateTime.new(2021,3,22,0,0), location: "à distance", price: 6500},
+  {trainingID: 10, start_date: DateTime.new(2020,10,3,0,0), end_date: DateTime.new(2021,3,6,0,0), location: "à distance", price: 6500},
 
 ]
 
@@ -86,7 +93,9 @@ program_array = [
   {trainingID: 4, description: "Vous allez expérimenter une nouvelle façon d'apprendre. A La Capsule, vous apprenez en construisant vos produits tech. C'est l'approche par projet ou Project-Based Learning. À travers ces 9 projets, vous allez apprendre à coder en immersion complète, comme si vous étiez déjà développeur web ! Au rythme d'un nouveau projet par semaine, chaque jour, les nouvelles notions sont immédiatement mises en pratique au sein d’un projet qui vous suit tout au long de la semaine.", language: "JavaScript, React, React Native"},
   {trainingID: 5, description: "À l'issue de ce Part-Time Coding Bootcamp, vous serez capables de coder un produit web, vous aurez l’autonomie technique nécessaire pour échanger et communiquer efficacement avec des équipes Tech et vous développerez votre esprit critique sur la faisabilité d’une fonctionnalité et sur les solutions techniques choisies. Vous apprendrez à travailler avec une équipe de développeurs et à adopter les process utilisés par les meilleures startups.", language: "Front-end, Back-end et Base de données"},
   {trainingID: 6, description: "Notre formation Développeur Web est une expérience immersive qui vous fait passer de débutant à Développeur Web en 9 semaines. À la fin de la formation, vous saurez construire des applications web fonctionnelles qui répondent aux besoins de vos utilisateurs, vous saurez collaborer avec d'autres Développeurs, Designers et Product Managers avec le bon workflow et les bonnes pratiques.", language: "HTML, CSS, JavaScript, Ruby, Ruby on Rails, SQL, Git, GitHub"},
-  {trainingID: 7, description: "Notre formation Développeur Web est une expérience immersive qui vous fait passer de débutant à Développeur Web en 9 semaines. À la fin de la formation, vous saurez construire des applications web fonctionnelles qui répondent aux besoins de vos utilisateurs, vous saurez collaborer avec d'autres Développeurs, Designers et Product Managers avec le bon workflow et les bonnes pratiques.", language: "HTML, CSS, JavaScript, Ruby, Ruby on Rails, SQL, Git, GitHub"}
+  {trainingID: 7, description: "Notre formation Développeur Web est une expérience immersive qui vous fait passer de débutant à Développeur Web en 9 semaines. À la fin de la formation, vous saurez construire des applications web fonctionnelles qui répondent aux besoins de vos utilisateurs, vous saurez collaborer avec d'autres Développeurs, Designers et Product Managers avec le bon workflow et les bonnes pratiques.", language: "HTML, CSS, JavaScript, Ruby, Ruby on Rails, SQL, Git, GitHub"},
+  {trainingID: 8, description: "Devenir développeur web, c’est avant tout mettre le doigt dans un univers vaste de technologies et de langages à dompter. Le premier objectif sera donc de vous constituer un socle technique suffisamment étoffé pour appréhender les problématiques du métier. L’objectif de la formation ne se résume pas à ingurgiter les langages jusqu’à plus soif, mais de se développer une capacité à créer. Se spécialiser sur certaines technos, afin de développer un savoir-faire concret permettant de concevoir une application.", language: "HTML, CSS, PHP, JS + spécialisation en Symfony, React ou Wordpress"},
+  {trainingID: 9, description: "Devenir développeur web, c’est avant tout mettre le doigt dans un univers vaste de technologies et de langages à dompter. Le premier objectif sera donc de vous constituer un socle technique suffisamment étoffé pour appréhender les problématiques du métier. L’objectif de la formation ne se résume pas à ingurgiter les langages jusqu’à plus soif, mais de se développer une capacité à créer. Se spécialiser sur certaines technos, afin de développer un savoir-faire concret permettant de concevoir une application.", language: "HTML, CSS, JS + spécialisation en React ou API/data"},
 ]
 
 # Seed
@@ -95,15 +104,15 @@ program_array = [
   School.create(name: school_array[i][:name], website: school_array[i][:website], siret: school_array[i][:siret], campus_nb: school_array[i][:campuses], creation_year: school_array[i][:creation])
 end
 
-23.times do |i|
+22.times do |i|
   Training.create(name: training_array[i][:name], duration: training_array[i][:duration], description: training_array[i][:description], hours_per_day: training_array[i][:hours_per_day], url: training_array[i][:url], mode: training_array[i][:mode], school_id: training_array[i][:schoolID], tag_list: [training_array[i][:mode],training_array[i][:duration].to_s])
 end
 
-19.times do |i|
+26.times do |i|
   Session.create(start_date: session_array[i][:start_date], end_date: session_array[i][:end_date], location: session_array[i][:location], price: session_array[i][:price], training_id: session_array[i][:trainingID])
 end
 
-6.times do |i|
+8.times do |i|
   Program.create(description: program_array[i][:description], language: program_array[i][:language], training_id: session_array[i][:trainingID])
 end
 

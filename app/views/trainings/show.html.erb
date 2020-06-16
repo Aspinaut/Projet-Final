@@ -6,11 +6,32 @@
     <a class="btn btn-primary btn-lg" href="#" role="button">Voir l'école</a>
   </div>
 
-  <p>Site de la formation : <%= @training.url %></p> 
-  <br>
 
 
-  <% if @sessions.count > 0 %>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#home">Programme</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#profile">Sessions</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#lang">Les langages</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#more">En savoir plus</a>
+  </li>
+  
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade" id="home">
+   <% @programs.each do |program| %>
+        <p><%= program.description %></p>
+    <% end %>
+  </div>
+
+  <div class="tab-pane fade" id="profile">
+      <% if @sessions.count > 0 %>
     <% @sessions.each do |session| %>
       <% if session.start_date && session.end_date %>
         <p><%= "La session commmence le #{session.start_date.strftime('%d/%m/%y')}" %></p>
@@ -22,11 +43,31 @@
   <% else %>
     <p>Pas de sessions de prévues...</p>
   <% end %>
+  </div>
 
-  <% @programs.each do |program| %>
-   <p><%= "Le Programme : #{program.description}" %></p>
-   <p><%= "Les langages : #{program.language}" %></p>
-  <% end %>
+   <div class="tab-pane fade" id="lang">
+    <% @programs.each do |program| %>
+        <p><%= program.language %></p>
+    <% end %>
+  </div>
+
+  <div class="tab-pane fade" id="more">
+  <p>Site de la formation : <%= @training.url %></p> 
+  <br>
+
+  </div>
+
+
+
+
+
+
+
+
+ 
+
+
+
 
 
 

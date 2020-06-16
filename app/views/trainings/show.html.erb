@@ -21,9 +21,9 @@
   <li class="nav-item">
     <a class="nav-link" data-toggle="tab" href="#more">En savoir plus</a>
   </li>
-  
 </ul>
-<div id="myTabContent" class="tab-content">
+
+  <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade" id="home">
    <% @programs.each do |program| %>
         <p><%= program.description %></p>
@@ -32,30 +32,37 @@
 
   <div class="tab-pane fade" id="profile">
       <% if @sessions.count > 0 %>
-    <% @sessions.each do |session| %>
+      <% @sessions.each do |session| %>
       <% if session.start_date && session.end_date %>
-        <p><%= "La session commmence le #{session.start_date.strftime('%d/%m/%y')}" %></p>
+        
+      <div class="card border-secondary mb-3" style="max-width: 20rem;">
+      <div class="card-header"> Session à venir </div>
+      <div class="card-body">
+      <h4 class="card-title">Secondary card title</h4>
+    <p class="card-text"><p><%= "La session commmence le #{session.start_date.strftime('%d/%m/%y')}" %></p>
         <p><%= "La session finit le #{session.end_date.strftime('%d/%m/%y')}" %></p>
       <% end %>
       <p><%= "Lieu : #{session.location}" %></p>
-      <p><%= "Prix : #{session.price} €" %></p>
-    <% end %>
-  <% else %>
-    <p>Pas de sessions de prévues...</p>
-  <% end %>
+      <p><%= "Prix : #{session.price} €" %></p></p>
+      </div>
+      <% end %>
+
+      <% else %>
+      <p>Pas de sessions de prévues...</p>
+      <% end %>
+    </div>
   </div>
 
-   <div class="tab-pane fade" id="lang">
+  <div class="tab-pane fade" id="lang">
     <% @programs.each do |program| %>
         <p><%= program.language %></p>
     <% end %>
   </div>
 
   <div class="tab-pane fade" id="more">
-  <p>Site de la formation : <%= @training.url %></p> 
-  <br>
-
+    <p>Site de la formation : <%= @training.url %></p> 
   </div>
+</div>
 
 
 

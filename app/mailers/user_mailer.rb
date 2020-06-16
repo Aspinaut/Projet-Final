@@ -1,8 +1,9 @@
 class UserMailer < ApplicationMailer
- default from: 'no-reply@yopmail.com'
-	def welcome_email(user)
-		@user = user
-		@url = 'http://monsite.fr/login'
-		mail(to: '@user.email', subject: 'Bienvenue dans Reconversion Web Pro!')
-	end
+  default from: 'notifications@example.com'
+
+  def welcome_email(user)
+    @user = user
+    @url  = 'http://example.com/login'
+    mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+  end
 end

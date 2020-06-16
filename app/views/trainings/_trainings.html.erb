@@ -19,13 +19,22 @@
             </div>
 
 
-              <div class="footer">
+              <div class="container justify ">
+                  <div class="footer">
+
+            <div class="toast-header">
+              <strong class="mr-auto">Les infos clés </strong>
+            </div>
+
+            <div class="toast-body ">
               <ul>
-                <li class="badge badge-info"><%= training.mode %></li>
-                <li class="badge badge-sucess"><%= training.mode %></li>
-                <li class="badge badge-warning">Primary</li>
-               </ul>
-              </div>
+              <li class="badge badge-warning">Mode <%= training.mode %></li>
+                  <li class="badge badge-danger"><%= training.hours_per_day %> heures/jour</li>
+                  <li class="badge badge-info">Durée <%= training.duration.to_i %> semaines</li>
+              </ul>
+            </div>
+            </div>
+            </div>
 
 
             <div class="card-footer" style="background: ; border-color: ;">

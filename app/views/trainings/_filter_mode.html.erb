@@ -1,4 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<body>
 <%= simple_form_for :search, method: "GET", url: root_path, remote: true do |form|%>
   <%= form.input :modes, label: "Modes", collection: $modes, as: :check_boxes %>
   <%= form.input :durations, label: "Duration", collection: $durations, as: :check_boxes %>
 <% end %>
+<%= simple_form_for :search, method: "GET", url: root_path, remote: true do |form|%>
+<label class="container"> 
+ 	<%= form.input :modes, collection: $modes, type:"radio", checked:"checked", name:"radio"%>
+  <span class="checkmark"></span>
+<% end %>
+</label>
+<div >
+<label class="container">A distance
+  <input type="radio" checked="checked" name="radio">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Sur site
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
+</label>
+<label class="container">A distance ou sur site
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
+</label>
+<label class="container">A distance-alternance
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
+</label>	
+</div>
+
+<div>
+<h4>Durée (en mois)</h4>
+<label class="container">1
+  <input type="radio" checked="checked" name="radio">
+  <span class="checkmark"></span>
+</label>
+<label class="container">10
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
+</label>
+<label class="container">12
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
+</label>
+<label class="container">13
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
+</label>
+<label class="container">9
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
+</label>
+<label class="container">24
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
+</label>
+<label class="container">4
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
+</label>
+<label class="container">36
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
+</label>
+<label class="container">48
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
+</label>
+</div>
+</body>
+</html>

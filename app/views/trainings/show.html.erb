@@ -23,6 +23,13 @@
     <p>Pas de sessions de prévues...</p>
   <% end %>
 
+  <% @programs.each do |program| %>
+   <p><%= "Le Programme : #{program.description}" %></p>
+   <p><%= "Les langages : #{program.language}" %></p>
+  <% end %>
+
+
+
   <div class="comments">
     <%= render 'comments' %>
     <%= render 'new_comment_form' %>

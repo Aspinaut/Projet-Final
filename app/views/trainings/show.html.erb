@@ -6,8 +6,9 @@
     <a class="btn btn-primary btn-lg" href="#" role="button">Voir l'école</a>
   </div>
 
-  <p>Site de la formation : <%= @training.url %></p>
+  <p>Site de la formation : <%= @training.url %></p> 
   <br>
+
 
   <% if @sessions.count > 0 %>
     <% @sessions.each do |session| %>

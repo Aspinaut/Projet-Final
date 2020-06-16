@@ -30,7 +30,8 @@
 
             <div class="card-footer" style="background: ; border-color: ;">
 
-               <%= link_to "Voir la formation", training_path(training), class: "btn btn-success btn-lg btn-block" %>
+
+               <%= link_to "Voir la formation", school_training_path(training.school_id, training.id), class: "btn btn-success btn-lg btn-block" %>
 
             </div>
           </div>

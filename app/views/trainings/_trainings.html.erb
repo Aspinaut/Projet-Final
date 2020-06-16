@@ -18,19 +18,27 @@
               <p class="card-text" style="text-align: justify;"  ><%=training.description%> </p>
             </div>
 
-
-              <div class="footer">
+             <div class="container justify ">
+                  <div class="footer">
+                       
+            <div class="toast-header">
+              <strong class="mr-auto">Les infos clés </strong>
+            </div>
+            
+            <div class="toast-body ">
               <ul>
-                <li class="badge badge-info"><%= training.mode %></li>
-                <li class="badge badge-sucess"><%= training.mode %></li>
-                <li class="badge badge-warning">Primary</li>
-               </ul>
-              </div>
+                  <li class="badge badge-warning">type <%= training.mode %></li>
+                  <li class="badge badge-danger"><%= training.hours_per_day %> heures/jour</li>
+                  <li class="badge badge-success">durée <%= training.duration.to_i %> semaines</li>
+              </ul>
+            </div>
+            </div>
+            </div>
 
 
             <div class="card-footer" style="background: ; border-color: ;">
 
-               <%= link_to "Voir la formation", training_path(training), class: "btn btn-success btn-lg btn-block" %>
+               <%= link_to "Voir la formation", training_path(training), class: "btn btn-info btn-lg btn-block" %>
 
             </div>
           </div>
@@ -40,3 +48,5 @@
 
   </div>
 </div>
+
+

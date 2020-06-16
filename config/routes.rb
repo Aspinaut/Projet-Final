@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
 
+  resources :schools do
+    resources :trainings, except: [:index]
+  end
+  resources :trainings, only: [:index]
+
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users, only: [:edit] do
     resources :pictures, only: [:create]
   end
   root 'trainings#index'
-  resources :trainings, :comments
+  resources :comments
 
   get "/staticpages" => "staticpages#guide"
 

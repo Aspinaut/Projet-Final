@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: 'notifications@example.com'
+  default from: 'reconversionwebpro@yopmail.com'
 
   def welcome_email(user)
     @user = user

@@ -34,30 +34,32 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-<!--   <%= link_to trainings_path do %>
-   <%= image_tag "propositionlogo2.png" %>
-   <% end %> -->
+  <div class="logorwp">
+  <%= link_to trainings_path do %>
+  <%= image_tag("propositionlogo2.png", size: "140x60") %>
+   <% end %> 
+   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+    <ul class="navbar-nav mr-auto"">
+      <div class="nav-item" id="element1">
         <%= link_to "Les formations", trainings_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
+      </div>
+      <div class="nav-item" id="element2">
         <a class="nav-link disabled" href="#">Les écoles</a>
-      </li>
+      </div>
 
-      <li class="nav-item">
+      <div class="nav-item" id="element3">
         <%= link_to "Espace école", new_school_path, class: "nav-link" %>
-      </li>
+      </div>
 
-      <li class="nav-item">
+      <div class="nav-item" id="element4">
         <%= link_to "Notre guide", staticpages_path , :class => "nav-link" %>
-      </li>
+      </div>
     </ul>
   </div>
 

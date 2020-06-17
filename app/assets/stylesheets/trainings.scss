@@ -14,7 +14,6 @@
 
 .comment {
   display: flex;
-
   flex-flow: column;
   padding-right: 25vw;
   margin-top: 2vh;
@@ -51,3 +50,8 @@
   padding-right: 25vw;
 
 }
+
+.infos {
+  border: solid 2px red;
+}
+

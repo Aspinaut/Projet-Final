@@ -34,56 +34,76 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-<!--   <%= link_to trainings_path do %>
-   <%= image_tag "propositionlogo2.png" %>
-   <% end %> -->
+  <div class="logorwp">
+  <%= link_to trainings_path do %>
+  <%= image_tag("propositionlogo2.png", size: "140x60") %>
+   <% end %> 
+   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+    <ul class="navbar-nav mr-auto"">
+      <div class="nav-item" id="element1">
         <%= link_to "Les formations", trainings_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
+      </div>
+      <div class="nav-item" id="element2">
         <a class="nav-link disabled" href="#">Les écoles</a>
-      </li>
+      </div>
 
-      <li class="nav-item">
+      <div class="nav-item" id="element3">
         <%= link_to "Espace école", new_school_path, class: "nav-link" %>
-      </li>
+      </div>
 
-      <li class="nav-item">
+      <div class="nav-item" id="element4">
         <%= link_to "Notre guide", staticpages_path , :class => "nav-link" %>
-      </li>
+      </div>
     </ul>
   </div>
 
+
+
   <div class="navbar_profile">
     <% if signed_in? %>
-      <% if current_user.picture.attached? %>
+        <% if current_user.picture.attached? %>
         <%= image_tag current_user.picture, class: "navbar_profile_picture" %>
-      <% end %>
-    <% end %>
-  </div>
+    
+        
+         <% end %> 
 
-  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-    <div class="btn-group" role="group">
-      <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon compte</button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop4" style="">
-          <% if signed_in? %>
-            <%= link_to "Mon profil", edit_user_registration_path %>
-            <br>
-            <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete%>
-          <% else %>
-            <%= link_to "Me connecter", new_user_session_path%><br>
-            <%= link_to "M'inscrire", new_user_registration_path%>
-          <% end %>
-        </div>
+      
+      <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <div class="btn-group" role="group">
+      <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= image_tag("user.png", size: "30x30") %>
+      Mon compte</button>
+
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop4" style="">
+
+      <%= link_to "Mes informations", edit_user_registration_path %>
+              <br>
+      <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete%>
+         </div>
       </div>
     </div>
+
+      <% else %>
+
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <div class="btn-group" role="group">
+      <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion</button>
+
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop4" style="">
+
+      <%= link_to "Me connecter", new_user_session_path%><br>
+      <%= link_to "M'inscrire", new_user_registration_path%>
+      </div>
+    </div>
+
+    <% end %>
+
 
 </nav>
 

@@ -11,7 +11,8 @@
       <strong><%= label_tag 'Contenu du commentaire' %></strong>
       <%= text_area_tag 'content', @comment.content, class:"form-control" %>
       <br />
-
+      <%= hidden_field_tag "school_id", params[:school_id] %>
+      <%= hidden_field_tag "training_id", params[:training_id] %>
       <div class="d-flex justify-content-center"><%= submit_tag "Editer le commentaire", class:"btn btn-success btn-lg"%></div>
 
     <% end %>

@@ -9,10 +9,10 @@ class CommentsController < ApplicationController
       @comment = Comment.new(content: params[:content],user_id: current_user.id, training_id: params[:training_id])
       if @comment.save
         flash[:success] = "The comment has been added."
-        redirect_to training_path(params[:training_id])
+        redirect_to school_training_path(Training.find(params[:training_id]).school_id, params[:training_id])
       else
         flash[:danger] = "The comment has not been added."
-        redirect_to training_path(params[:training_id])
+        redirect_to school_training_path(Training.find(params[:training_id]).school_id, params[:training_id])
       end
     else
       flash[:danger] = "Connect to comment."
@@ -33,10 +33,10 @@ class CommentsController < ApplicationController
       @comment.update(content: params[:content])
       if @comment.save
         flash[:success] = "The comment has been edited."
-        render 'trainings/show'
+        redirect_to school_training_path(params[:school_id], params[:training_id])
       else
         flash[:danger] = "The comment has not been edited."
-        render 'trainings/show'
+        redirect_to school_training_path(params[:school_id], params[:training_id])
       end
     else
       flash[:danger] = "Connect to edit."
@@ -51,7 +51,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     flash[:success] = "The comment has been deleted."
-    redirect_to training_path(params[:training_id])
+    redirect_to school_training_path(Training.find(params[:training_id]).school_id, params[:training_id])
   end
 
 end

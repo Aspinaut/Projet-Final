@@ -80,7 +80,6 @@ border-radius: 10px
 
  .footer-line {
    background-color: #FFFFFF;
-
  }
 
 .footer-text {
@@ -92,18 +91,17 @@ border-radius: 10px
   left: 0;
   bottom: 0;
   width:100%;
-
   color: #fff;
  }
 
 
 a, a:visited {
-     Les liens "au repos" et déjà visités antérieurement 
     color: #ffffff; /* couleur blanche */
 }
+
 a:hover, a:focus, a:active {
     /* Les liens au survol, au focus, et actifs : on leur donne la couleur rouge pour l'exemple */
-    color: #blue;;
+    color: #blue;
 }
 
 
@@ -115,21 +113,18 @@ a:hover, a:focus, a:active {
 .propositionlogo2.png {
 max-width: 50%;
   height: auto;
-
-
 }
 
 /*jumbotron*/
 
 .jumbotron-1 {
-  background:url('https://cdn.pixabay.com/photo/2014/05/02/21/49/home-office-336373_960_720.jpg') top center fixed;
+background:url('https://cdn.pixabay.com/photo/2014/05/02/21/49/home-office-336373_960_720.jpg') top center fixed;
 height: auto;
 background-size:cover;
 margin-top: 2px;
 margin-bottom:1px;
 padding-top: 3em;
 padding-bottom: 5px;
-  
 }
 
 
@@ -141,35 +136,28 @@ margin-top: 2px;
 margin-bottom:1px;
 padding-top: 3em;
 padding-bottom: 5px;
-  
 }
 
 .green {
 border: 0px solid green;
  }
+
 .header-form {
    font-size: 50px; /* Paragraphes de 14 pixels */
   text-align: center;
    color: white;
-
-
 }
 
 .yellow {
 border: 0px solid yellow;
-
 }
 
 .red {
-
   margin-left: auto;
   margin-right: auto;
-
-
 }
 
 .form-group{
-
  font-weight: bold;
 }
 

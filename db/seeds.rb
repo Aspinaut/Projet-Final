@@ -16,7 +16,7 @@ Program.destroy_all
 
 # Reset the counters to 0
 ActiveRecord::Base.connection.tables.each do |t|
-  ActiveRecord::Base.connection.reset_pk_sequence!(t)
+ActiveRecord::Base.connection.reset_pk_sequence!(t)
 end
 
 # Array of hashes
@@ -50,7 +50,7 @@ training_array = [
   {schoolID: 4, name: "Professionnalisation WordPress", duration: 12, description: "Une formation pour se professionnaliser en WordPress, le CMS utilisé par 35% du web !", url: "https://oclock.io/formations/developpeur-wordpress", mode: "à distance", helpForAJob: true, hours_per_day: 8, background_img:"https://images.unsplash.com/photo-1563461661026-49631dd5d68e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
   {schoolID: 4, name: "Spécialisation Data et conception d'API", duration: 4, description: "Une formation pour apprendre à jongler avec des données en JavaScript.", url: "https://oclock.io/formations/developpeur-data-api", mode: "à distance", helpForAJob: true, hours_per_day: 8, background_img:"https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
   {schoolID: 4, name: "Professionnalisation Data et conception d'API", duration: 12, description: "Une formation pour se professsionnaliser avec les données en JavaScript.", url: "https://oclock.io/formations/developpeur-data-api", mode: "à distance", helpForAJob: true, hours_per_day: 8, background_img:"https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
-  {schoolID: 5, name: "Développeur web et web mobile DWWM", duration: 36, description: "Avec Educatel, vous pouvez apprendre le métier de développeur web tout en préparant le passage de votre titre professionnel, reconnu par l’Etat.", url: "https://www.educatel.fr/formation-web-informatique/developpeur-web-mobile", mode: "à distance", helpForAJob: true, hours_per_day: nil, background_img:"https://images.unsplash.com/photo-1573164713619-24c711fe7878?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
+  {schoolID: 5, name: "Développeur web et web mobile DWWM", duration: 36, description: "Avec Educatel, vous pouvez apprendre le métier de développeur web tout en préparant le passage de votre titre professionnel, reconnu par l’Etat.", url: "https://www.educatel.fr/formation-web-informatique/developpeur-web-mobile", mode: "à distance ou présentiel", helpForAJob: true, hours_per_day: nil, background_img:"https://images.unsplash.com/photo-1573164713619-24c711fe7878?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
   {schoolID: 6, name: "Développeur Web Javascript PHP", duration: 16, description: "Devenez développeur web junior en 4 mois en maîtrisant les 5 langages les plus demandés sur le marché du travail : HTML, CSS, JavaScript, SQL et PHP.", url: "https://3wa.fr/formations/developpeur-web-php/developpeur-web-php-javascript-4-mois-temps-plein/", mode: "à distance", helpForAJob: true, hours_per_day: 8, background_img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
   {schoolID: 6, name: "Développeur Full Stact React Node.Js", duration: 48, description: "La 3W Academy propose une formation en alternance au métier de Développeur Web permettant de se spécialiser sur les technologies les plus demandées sur le marché : Node.Js et React.", url: "https://3wa.fr/formations/developpeur-web-php/developpeur-full-stack-react-node-js-1-an-alternance/", mode: "à distance et en alternance", helpForAJob: true, hours_per_day: 8, background_img:"https://images.unsplash.com/photo-1558959356-4b2c36036b8c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
   {schoolID: 7, name: "Développeur Web", duration: 12, description: "Un programme de 490h pour devenir développeur web et changer de vie.", url: "https://www.lapiscine.pro/formations/developpeur/", mode: "présentiel", helpForAJob: true, hours_per_day: 8, background_img:"https://images.unsplash.com/photo-1558959355-d9922ff0b767?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"}
@@ -84,10 +84,50 @@ session_array = [
   {trainingID: 9, start_date: DateTime.new(2020,8,24,0,0), end_date: DateTime.new(2021,2,9,0,0), location: "à distance", price: 6500},
   {trainingID: 9, start_date: DateTime.new(2020,10,5,0,0), end_date: DateTime.new(2021,3,22,0,0), location: "à distance", price: 6500},
   {trainingID: 10, start_date: DateTime.new(2020,10,3,0,0), end_date: DateTime.new(2021,3,6,0,0), location: "à distance", price: 6500},
-
-]
-
-
+  {trainingID: 11, start_date: DateTime.new(2020,8,24,0,0), end_date: DateTime.new(2020,11,27,0,0), location: "à distance", price: 3900},
+  {trainingID: 11, start_date: DateTime.new(2020,5,10,0,0), end_date: DateTime.new(2021,1,15,0,0), location: "à distance", price: 3900},
+  {trainingID: 12, start_date: DateTime.new(2020,7,8,0,0), end_date: DateTime.new(2020,8,6,0,0), location: "à distance", price: 2000},
+  {trainingID: 12, start_date: DateTime.new(2020,7,29,0,0), end_date: DateTime.new(2020,8,27,0,0), location: "à distance", price: 2000},
+  {trainingID: 12, start_date: DateTime.new(2020,9,7,0,0), end_date: DateTime.new(2020,10,7,0,0), location: "à distance", price: 2000},
+  {trainingID: 12, start_date: DateTime.new(2020,10,21,0,0), end_date: DateTime.new(2020,11,19,0,0), location: "à distance", price: 2000},
+  {trainingID: 12, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,1,8,0,0), location: "à distance", price: 2000},
+  {trainingID: 13, start_date: DateTime.new(2020,7,8,0,0), end_date: DateTime.new(2020,10,1,0,0), location: "à distance", price: 2900},
+  {trainingID: 13, start_date: DateTime.new(2020,7,29,0,0), end_date: DateTime.new(2020,10,27,0,0), location: "à distance", price: 2900},
+  {trainingID: 13, start_date: DateTime.new(2020,9,7,0,0), end_date: DateTime.new(2020,11,22,0,0), location: "à distance", price: 2900},
+  {trainingID: 13, start_date: DateTime.new(2020,10,21,0,0), end_date: DateTime.new(2021,1,14,0,0), location: "à distance", price: 2900},
+  {trainingID: 13, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,3,5,0,0), location: "à distance", price: 2900},
+  {trainingID: 14, start_date: DateTime.new(2020,7,29,0,0), end_date: DateTime.new(2020,8,27,0,0), location: "à distance", price: 2000},
+  {trainingID: 14, start_date: DateTime.new(2020,8,17,0,0), end_date: DateTime.new(2020,9,15,0,0), location: "à distance", price: 2000},
+  {trainingID: 14, start_date: DateTime.new(2020,10,21,0,0), end_date: DateTime.new(2020,11,19,0,0), location: "à distance", price: 2000},
+  {trainingID: 14, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,1,8,0,0), location: "à distance", price: 2000},
+  {trainingID: 14, start_date: DateTime.new(2021,1,4,0,0), end_date: DateTime.new(2021,2,2,0,0), location: "à distance", price: 2000},
+  {trainingID: 15, start_date: DateTime.new(2020,7,29,0,0), end_date: DateTime.new(2020,10,22,0,0), location: "à distance", price: 2900},
+  {trainingID: 15, start_date: DateTime.new(2020,8,17,0,0), end_date: DateTime.new(2020,11,10,0,0), location: "à distance", price: 2900},
+  {trainingID: 15, start_date: DateTime.new(2020,10,21,0,0), end_date: DateTime.new(2020,1,14,0,0), location: "à distance", price: 2900},
+  {trainingID: 15, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,3,5,0,0), location: "à distance", price: 2900},
+  {trainingID: 15, start_date: DateTime.new(2021,1,4,0,0), end_date: DateTime.new(2021,3,30,0,0), location: "à distance", price: 2900},
+  {trainingID: 16, start_date: DateTime.new(2020,7,29,0,0), end_date: DateTime.new(2020,8,27,0,0), location: "à distance", price: 2000},
+  {trainingID: 16, start_date: DateTime.new(2020,8,17,0,0), end_date: DateTime.new(2020,9,15,0,0), location: "à distance", price: 2000},
+  {trainingID: 16, start_date: DateTime.new(2020,10,21,0,0), end_date: DateTime.new(2020,11,19,0,0), location: "à distance", price: 2000},
+  {trainingID: 16, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,1,8,0,0), location: "à distance", price: 2000},
+  {trainingID: 16, start_date: DateTime.new(2021,1,4,0,0), end_date: DateTime.new(2021,2,2,0,0), location: "à distance", price: 2000},
+  {trainingID: 17, start_date: DateTime.new(2020,7,29,0,0), end_date: DateTime.new(2020,10,22,0,0), location: "à distance", price: 2900},
+  {trainingID: 17, start_date: DateTime.new(2020,8,17,0,0), end_date: DateTime.new(2020,11,10,0,0), location: "à distance", price: 2900},
+  {trainingID: 17, start_date: DateTime.new(2020,10,21,0,0), end_date: DateTime.new(2021,1,14,0,0), location: "à distance", price: 2900},
+  {trainingID: 17, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,3,5,0,0), location: "à distance", price: 2900},
+  {trainingID: 17, start_date: DateTime.new(2021,1,4,0,0), end_date: DateTime.new(2021,3,30,0,0), location: "à distance", price: 2900},
+  {trainingID: 18, start_date: DateTime.new(2020,7,8,0,0), end_date: DateTime.new(2020,8,6,0,0), location: "à distance", price: 2000},
+  {trainingID: 18, start_date: DateTime.new(2020,8,17,0,0), end_date: DateTime.new(2020,9,15,0,0), location: "à distance", price: 2000},
+  {trainingID: 18, start_date: DateTime.new(2020,9,7,0,0), end_date: DateTime.new(2020,10,7,0,0), location: "à distance", price: 2000},
+  {trainingID: 18, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,1,8,0,0), location: "à distance", price: 2000},
+  {trainingID: 18, start_date: DateTime.new(2021,1,20,0,0), end_date: DateTime.new(2021,2,18,0,0), location: "à distance", price: 2000},
+  {trainingID: 19, start_date: DateTime.new(2020,7,8,0,0), end_date: DateTime.new(2020,10,1,0,0), location: "à distance", price: 2900},
+  {trainingID: 19, start_date: DateTime.new(2020,8,17,0,0), end_date: DateTime.new(2020,11,10,0,0), location: "à distance", price: 2900},
+  {trainingID: 19, start_date: DateTime.new(2020,9,7,0,0), end_date: DateTime.new(2020,12,2,0,0), location: "à distance", price: 2900},
+  {trainingID: 19, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,3,5,0,0), location: "à distance", price: 2900},
+  {trainingID: 19, start_date: DateTime.new(2021,1,20,0,0), end_date: DateTime.new(2021,4,15,0,0), location: "à distance", price: 2900},
+  {trainingID: 20, start_date: "A tout moment de l'année", end_date: "", location: "à distance", price: 3950},
+  ]
 program_array = [ 
   {trainingID: 1, description: "NC", language: "HTML, CSS"},
   {trainingID: 2, description: "Le parcours fullstack se déroule en 12 semaines. Il a pour objectif de permettre à un entrepreneur de créer son projet, à une personne en reconversion d'initier sa nouvelle carrière, ou simplement de compléter son CV pour améliorer son employabilité. Cette formation est ultra intense et vous demandera d'être disponible du lundi au vendredi de 09h00 à 20h00. Comme nous ne sommes pas une école classique, vous pourrez adapter vos horaires en fonction de vos obligations.", language: "HTML, CSS, JavaScript, Ruby, Ruby on Rails, SQL, Git, GitHub"},
@@ -110,7 +150,7 @@ end
   Training.create(name: training_array[i][:name], duration: training_array[i][:duration], description: training_array[i][:description], hours_per_day: training_array[i][:hours_per_day], url: training_array[i][:url], mode: training_array[i][:mode], school_id: training_array[i][:schoolID], tag_list: [training_array[i][:mode],training_array[i][:duration].to_s], background_img: training_array[i][:background_img])
 end
 
-26.times do |i|
+69.times do |i|
   Session.create(start_date: session_array[i][:start_date], end_date: session_array[i][:end_date], location: session_array[i][:location], price: session_array[i][:price], training_id: session_array[i][:trainingID])
 end
 

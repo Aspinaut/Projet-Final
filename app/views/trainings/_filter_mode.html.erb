@@ -1,4 +1,38 @@
-<%= simple_form_for :search, method: "GET", url: root_path, remote: true do |form|%>
-  <%= form.input :modes, label: "Modes", collection: $modes, as: :check_boxes %>
-  <%= form.input :durations, label: "Duration", collection: $durations, as: :check_boxes %>
-<% end %>
+<div class="container">
+  <%= simple_form_for :search, method: "GET", url: root_path, remote: true do |form|%>
+    <div class="row">
+      <%= form.input :modes, label: "Mode", collection: $modes, as: :check_boxes %>
+    </div>
+    <div class="row">
+      <%= form.input :durations, label: "Durée (en semaines)", collection: $durations, as: :check_boxes %>
+    </div>
+    <div class="row">
+      <%= form.input :prices, label: "Prix", collection: $prices, as: :check_boxes %>
+    </div>
+  <% end %>
+</div>
+<script>
+  $(function () {
+    $('input[type=checkbox]').click(function () {
+      var chks = document.querySelectorAll(".check_boxes");
+
+      for (i = 0; i < chks.length; i++) {
+        chks[i].checked = false;
+      }
+      if (chks.length > 1 ) {
+        $(this)[0].checked = true;
+      }
+
+    });
+    $((this)).click(function () {
+      if ($(this)[0].checked == false) {
+        $(this)[0].checked = true;
+      } else {
+        $(this)[0].checked = false;
+      }
+    });
+   });
+
+ </script>
+
+ //document.getElementsByTagName("input")[1].name;

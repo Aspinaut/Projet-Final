@@ -88,7 +88,7 @@ session_array = [
 ]
 
 
-program_array = [ 
+program_array = [
   {trainingID: 1, description: "NC", language: "HTML, CSS"},
   {trainingID: 2, description: "Le parcours fullstack se déroule en 12 semaines. Il a pour objectif de permettre à un entrepreneur de créer son projet, à une personne en reconversion d'initier sa nouvelle carrière, ou simplement de compléter son CV pour améliorer son employabilité. Cette formation est ultra intense et vous demandera d'être disponible du lundi au vendredi de 09h00 à 20h00. Comme nous ne sommes pas une école classique, vous pourrez adapter vos horaires en fonction de vos obligations.", language: "HTML, CSS, JavaScript, Ruby, Ruby on Rails, SQL, Git, GitHub"},
   {trainingID: 3, description: "THP Next est une formation de 12 semaines qui vient à la suite de THP code : les élèves ont des notions en Ruby on Rails et ces derniers savent reproduire Airbnb. Cette formation permettra d’engager une carrière professionnelle et promettra à celui ou celle qui la fera l’assurance de débouchés beaucoup plus importants en terme d’emplois ou de freelance. Pour ceux ou celles qui souhaitent créer leur entreprise cela leur permettra d’améliorer leur produit et de le rendre compatible avec les exigences des utilisateurs des années 2020.", language: "JavaScript moderne, ReactJS"},
@@ -107,11 +107,55 @@ program_array = [
 end
 
 22.times do |i|
-  Training.create(name: training_array[i][:name], duration: training_array[i][:duration], description: training_array[i][:description], hours_per_day: training_array[i][:hours_per_day], url: training_array[i][:url], mode: training_array[i][:mode], school_id: training_array[i][:schoolID], tag_list: [training_array[i][:mode],training_array[i][:duration].to_s], background_img: training_array[i][:background_img])
+  training = Training.create(name: training_array[i][:name], duration: training_array[i][:duration], description: training_array[i][:description], hours_per_day: training_array[i][:hours_per_day], url: training_array[i][:url], mode: training_array[i][:mode], school_id: training_array[i][:schoolID], background_img: training_array[i][:background_img])
+
+  duration = training_array[i][:duration].to_i
+
+  if duration <= 10
+    duration = "1-10"
+  elsif duration > 10 && duration <= 20
+    duration = "11-20"
+  elsif duration > 20 && duration <= 30
+    duration = "21-30"
+  elsif duration > 30 && duration <= 40
+    duration = "31-40"
+  elsif duration > 41
+    duration = "41+"
+  end
+  training.update(tag_list: [training_array[i][:mode], duration])
 end
 
 26.times do |i|
-  Session.create(start_date: session_array[i][:start_date], end_date: session_array[i][:end_date], location: session_array[i][:location], price: session_array[i][:price], training_id: session_array[i][:trainingID])
+  session = Session.create(start_date: session_array[i][:start_date], end_date: session_array[i][:end_date], location: session_array[i][:location], price: session_array[i][:price], training_id: session_array[i][:trainingID])
+
+  duration = session.training[:duration].to_i
+  price = session[:price].to_i
+
+  if duration <= 10
+    duration = "1-10"
+  elsif duration > 10 && duration <= 20
+    duration = "11-20"
+  elsif duration > 20 && duration <= 30
+    duration = "21-30"
+  elsif duration > 30 && duration <= 40
+    duration = "31-40"
+  elsif duration > 41
+    duration = "41+"
+  end
+
+  if price <= 1000
+    price = "0-1000"
+  elsif price > 1000 && price <= 2000
+    price = "1001-2000"
+  elsif price > 2000 && price <= 3000
+    price = "2001-3000"
+  elsif price > 3000 && price <= 4000
+    price = "3001-4000"
+  elsif price > 4000
+    price = "4000+"
+  end
+
+  session.training.update(tag_list: [session.training[:mode], duration, price])
 end
 
 8.times do |i|

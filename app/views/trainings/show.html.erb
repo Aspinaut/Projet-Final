@@ -8,7 +8,7 @@
 
 
 
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs mb-5">
   <li class="nav-item">
     <a class="nav-link" data-toggle="tab" href="#home">Programme</a>
   </li>
@@ -31,24 +31,23 @@
   </div>
 
   <div class="tab-pane fade" id="profile">
+    <div class="row">
       <% if @sessions.count > 0 %>
-      <% @sessions.each do |session| %>
-      <% if session.start_date && session.end_date %>
-        
-      <div class="card border-secondary mb-3" style="max-width: 20rem;">
-      <div class="card-header"> Session à venir </div>
-      <div class="card-body">
-      <h4 class="card-title">Secondary card title</h4>
-    <p class="card-text"><p><%= "La session commmence le #{session.start_date.strftime('%d/%m/%y')}" %></p>
-        <p><%= "La session finit le #{session.end_date.strftime('%d/%m/%y')}" %></p>
-      <% end %>
-      <p><%= "Lieu : #{session.location}" %></p>
-      <p><%= "Prix : #{session.price} €" %></p></p>
-      </div>
-      <% end %>
-
+        <% @sessions.each do |session| %>
+          <% if session.start_date && session.end_date %>
+            <div class="col">
+              <div class="card-header border-secondary mb-3"> Session à venir </div>
+              <div class="card-body">
+                <p class="card-text"><p><i class="fa fa-calendar-check-o" aria-hidden="true"></i><%=  " Commence le : #{session.start_date.strftime('%d/%m/%y')}" %></p>
+                <p><i class="fa fa-calendar-times-o" aria-hidden="true"></i><%= " Finit le : #{session.end_date.strftime('%d/%m/%y')}"%></p>
+                <p><i class="fa fa-map-marker" aria-hidden="true"></i><%= "    #{session.location}" %></p>
+                <p><i class="fa fa-eur" aria-hidden="true"></i><%= "    #{session.price.to_i}" %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       <% else %>
-      <p>Pas de sessions de prévues...</p>
+        <p>Pas de sessions de prévues...</p>
       <% end %>
     </div>
   </div>
@@ -60,7 +59,7 @@
   </div>
 
   <div class="tab-pane fade" id="more">
-    <p>Site de la formation : <%= @training.url %></p> 
+    <p>Site de la formation : <%= @training.url %></p>
   </div>
 </div>
 
@@ -71,7 +70,7 @@
 
 
 
- 
+
 
 
 

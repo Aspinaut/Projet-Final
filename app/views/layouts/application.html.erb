@@ -63,29 +63,47 @@
     </ul>
   </div>
 
+
+
   <div class="navbar_profile">
     <% if signed_in? %>
-      <% if current_user.picture.attached? %>
+        <% if current_user.picture.attached? %>
         <%= image_tag current_user.picture, class: "navbar_profile_picture" %>
-      <% end %>
-    <% end %>
-  </div>
+    
+        
+         <% end %> 
 
-  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-    <div class="btn-group" role="group">
-      <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon compte</button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop4" style="">
-          <% if signed_in? %>
-            <%= link_to "Mon profil", edit_user_registration_path %>
-            <br>
-            <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete%>
-          <% else %>
-            <%= link_to "Me connecter", new_user_session_path%><br>
-            <%= link_to "M'inscrire", new_user_registration_path%>
-          <% end %>
-        </div>
+      
+      <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <div class="btn-group" role="group">
+      <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= image_tag("user.png", size: "30x30") %>
+      Mon compte</button>
+
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop4" style="">
+
+      <%= link_to "Mes informations", edit_user_registration_path %>
+              <br>
+      <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete%>
+         </div>
       </div>
     </div>
+
+      <% else %>
+
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <div class="btn-group" role="group">
+      <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion</button>
+
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop4" style="">
+
+      <%= link_to "Me connecter", new_user_session_path%><br>
+      <%= link_to "M'inscrire", new_user_registration_path%>
+      </div>
+    </div>
+
+    <% end %>
+
 
 </nav>
 

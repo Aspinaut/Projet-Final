@@ -1,12 +1,12 @@
 <div class="training">
   <div class="jumbotron" style="background-image: url(<%= @training.background_img %>); background-size: cover; background-position: center center;">
-    <h1 class="display-5 text-white" style="border: solid 2px"><%= @training.name %></h1>
+    <h1 class="display-5 text-white"> <%= @training.name %></h1>
     <hr class="my-4">
-    <h3 class="display-6"><%= @training.school.name %></h3>
+    <h3 class="display-6 text-warning"><%= @training.school.name %></h3>
   </div>
 
 
-
+<div class="infos" >
 <ul class="nav nav-tabs mb-5">
   <li class="nav-item">
     <a class="nav-link" data-toggle="tab" href="#home">Programme</a>
@@ -69,9 +69,10 @@
 
   </div>
 
+</div>
+</div>
 
   <div class="comments">
     <%= render 'comments' %>
     <%= render 'new_comment_form' %>
   </div>
-</div>

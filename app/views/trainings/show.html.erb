@@ -60,7 +60,8 @@
   </div>
 
   <div class="tab-pane fade" id="more">
-    <p>Site de la formation : <%= @training.url %></p> 
+    <%= link_to "Aller sur le site de la formation", @training.url, class: "btn btn-info" %>
+
   </div>
 </div>
 

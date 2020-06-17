@@ -12,12 +12,12 @@
 </div>
 
 <script type="text/javascript">
-  var radioButtons = document.querySelectorAll(".check_boxes");
+  var checkBoxes = document.querySelectorAll(".check_boxes");
   //var radioButtons = document.querySelectorAll("input.radio_buttons.required");
   var form = document.querySelector('.simple_form');
 
-  for (const radio of radioButtons) {
-  radio.addEventListener( 'change', function() {
+  for (const checkBox of checkBoxes) {
+  checkBox.addEventListener( 'change', function() {
     Rails.fire(form, 'submit');
   });
   }

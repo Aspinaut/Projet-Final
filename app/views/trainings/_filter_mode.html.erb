@@ -11,3 +11,28 @@
     </div>
   <% end %>
 </div>
+<script>
+  $(function () {
+    $('input[type=checkbox]').click(function () {
+      var chks = document.querySelectorAll(".check_boxes");
+
+      for (i = 0; i < chks.length; i++) {
+        chks[i].checked = false;
+      }
+      if (chks.length > 1 ) {
+        $(this)[0].checked = true;
+      }
+
+    });
+    $((this)).click(function () {
+      if ($(this)[0].checked == false) {
+        $(this)[0].checked = true;
+      } else {
+        $(this)[0].checked = false;
+      }
+    });
+   });
+
+ </script>
+
+ //document.getElementsByTagName("input")[1].name;

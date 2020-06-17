@@ -25,14 +25,16 @@
 
   <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade" id="home">
-   <% @programs.each do |program| %>
-        <p><%= program.description %></p>
+    <% if @programs %>
+      <% @programs.each do |program| %>
+          <p><%= program.description %></p>
+      <% end %>
     <% end %>
   </div>
 
   <div class="tab-pane fade" id="profile">
     <div class="row">
-      <% if @sessions.count > 0 %>
+      <% if @sessions %>
         <% @sessions.each do |session| %>
           <% if session.start_date && session.end_date %>
             <div class="col">
@@ -53,29 +55,17 @@
   </div>
 
   <div class="tab-pane fade" id="lang">
-    <% @programs.each do |program| %>
-        <p><%= program.language %></p>
+    <% if @programs %>
+      <% @programs.each do |program| %>
+          <p><%= program.language %></p>
+      <% end %>
     <% end %>
   </div>
 
   <div class="tab-pane fade" id="more">
-    <p>Site de la formation : <%= @training.url %></p>
+    <%= link_to "Site de la formation : ", @training.url %>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   <div class="comments">
     <%= render 'comments' %>

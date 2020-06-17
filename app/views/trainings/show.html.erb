@@ -1,9 +1,8 @@
 <div class="training">
   <div class="jumbotron">
-    <h1 class="display-3"><%= @training.name %></h1>
+    <h1 class="display-5"><%= @training.name %></h1>
     <hr class="my-4">
-    <h3 class="display-4"><%= @training.school.name %></h3>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Voir l'école</a>
+    <h3 class="display-6"><%= @training.school.name %></h3>
   </div>
 
 
@@ -14,9 +13,8 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" data-toggle="tab" href="#profile">Sessions</a>
-  </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#lang">Les langages</a>
+    <a class="nav-link" data-toggle="tab" href="#school">L'école</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" data-toggle="tab" href="#more">En savoir plus</a>
@@ -27,6 +25,10 @@
   <div class="tab-pane fade" id="home">
    <% @programs.each do |program| %>
         <p><%= program.description %></p>
+    <% end %>
+
+    <% @programs.each do |program| %>
+        <p><%= program.language %></p>
     <% end %>
   </div>
 
@@ -53,10 +55,8 @@
     </div>
   </div>
 
-  <div class="tab-pane fade" id="lang">
-    <% @programs.each do |program| %>
-        <p><%= program.language %></p>
-    <% end %>
+
+  <div class="tab-pane fade" id="school">
   </div>
 
   <div class="tab-pane fade" id="more">

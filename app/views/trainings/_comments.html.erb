@@ -4,7 +4,7 @@
 
     <div class= "container-fluid comment">
 
-      <div class="comment_main">  
+      <div class="comment_main">
         <div class="user_avatar">
           <img data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1" alt="32x32" class="mr-2 rounded" style="width: 32px; height: 32px;" src="https://previews.123rf.com/images/salamatik/salamatik1801/salamatik180100019/92979836-ic%C3%B4ne-de-visage-anonyme-de-profil-personne-silhouette-grise-avatar-par-d%C3%A9faut-masculin-photo-placeholder-.jpg" data-holder-rendered="true">
         </div>
@@ -30,6 +30,7 @@
               <%= submit_tag "Supprimer", {class: 'btn btn-danger'} %>
             <% end %>
             <%= form_tag edit_comment_path(comment.id), method: "get" do %>
+              <%= hidden_field_tag "school_id", @training.school.id %>
               <%= hidden_field_tag "training_id", @training.id %>
               <%= hidden_field_tag "comment_id", comment.id %>
               <%= submit_tag "Editer", {class: 'btn btn-info'} %>

@@ -2,16 +2,17 @@
 <div class="container-fluid red">
 
   <div class="container green">
-
     <div class="row pt-3 m-auto yellow">
        <% @trainings.each do |training|%>
         <article class ="col-xs-12 col-sm-12 col md-4 col-lg-4 p-2 card-index">
 
 
             <div class="card card-custom bg-white border-white border-5" style="height: 450px">
-            <div class="card-custom-img" style="background-image: url(https://cdn.pixabay.com/photo/2015/06/24/16/36/office-820390_960_720.jpg);"></div>
+            <div class="card-custom-img" style="background-image: url(<%= training.background_img %>);"></div>
+
             <div class="card-custom-avatar">
-              <img class="img-fluid" src="https://images.typeform.com/images/FbT8FjdYKN/image/default" alt="Avatar" />
+              <img class="img-fluid" src="<%= training.school.logo_url %>" alt="Avatar">
+              
             </div>
             <div class="card-body" style="overflow-y: auto">
               <h4 class="card-title"> <%= training.name %></h4>

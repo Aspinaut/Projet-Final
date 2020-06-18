@@ -1,21 +1,26 @@
 <div class="container">
+
   <%= simple_form_for :search, method: "GET", url: root_path, remote: true do |form|%>
-    <div class="row">
-      <%= form.input :modes, label: "Mode", collection: $modes, as: :check_boxes %>
-    </div>
-    <div class="row">
-      <%= form.input :durations, label: "Durée (en semaines)", collection: $durations, as: :check_boxes %>
-    </div>
-    <div class="row">
-      <%= form.input :prices, label: "Prix", collection: $prices, as: :check_boxes %>
+    <div class="d-flex flex-row justify-content-center filters">
+      <div class="modes">
+        <%= form.input :modes, label: "Mode", collection: $modes, as: :check_boxes %>
+      </div>
+      <div class="durations">
+        <%= form.input :durations, label: "Durée (en semaines)", collection: $durations, as: :check_boxes %>
+      </div>
+      <div class="prices">
+        <%= form.input :prices, label: "Prix", collection: $prices, as: :check_boxes %>
+      </div>
     </div>
   <% end %>
 </div>
+
 <script>
   $(function () {
     var chks_modes = $('[name="search[modes][]"]')
     var chks_durations = $('[name="search[durations][]"]')
     var chks_prices = $('[name="search[prices][]"]')
+    //var checkBoxes = $("input.check_boxes");
 
     chks_modes.click(function () {
       for (i = 0; i < chks_modes.length; i++) {
@@ -38,5 +43,9 @@
         }
       }
     });
+
+    checkBoxes[0].attributes.class.nodeValue = checkBoxes[0].attributes.class.nodeValue + " d-flex flex-column";
+    checkBoxes[6].attributes.class.nodeValue = checkBoxes[6].attributes.class.nodeValue + " d-flex flex-column";
+    checkBoxes[13].attributes.class.nodeValue = checkBoxes[13].attributes.class.nodeValue + " d-flex flex-column";
    });
  </script>

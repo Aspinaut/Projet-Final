@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Bellota:wght@700&display=swap');
 
 .card-custom {
   overflow: hidden;
@@ -67,7 +68,7 @@
 }
 
 .footer {
-  
+
 border: 0px solid grey;
 border-radius: 10px
 
@@ -98,7 +99,7 @@ border-radius: 10px
 
 
 a, a:visited {
-     Les liens "au repos" et déjà visités antérieurement 
+     Les liens "au repos" et déjà visités antérieurement
     color: #ffffff; /* couleur blanche */
 }
 a:hover, a:focus, a:active {
@@ -129,7 +130,7 @@ margin-top: 2px;
 margin-bottom:1px;
 padding-top: 3em;
 padding-bottom: 5px;
-  
+
 }
 
 
@@ -141,7 +142,7 @@ margin-top: 2px;
 margin-bottom:1px;
 padding-top: 3em;
 padding-bottom: 5px;
-  
+
 }
 
 .green {

@@ -36,7 +36,7 @@
 
     .comment_details {
       list-style-type: none;
-      
+
     }
 
     .comment_buttons {
@@ -50,4 +50,31 @@
   margin-top: 2vh;
   padding-right: 25vw;
 
+}
+
+
+
+.filters {
+  font-family: 'Bellota';
+  .search_modes {
+    label.check_boxes {
+      padding: 5px;
+      background-color: #f39c12;
+      border-radius: 5%;
+    }
+  }
+  .search_durations {
+    label.check_boxes {
+      padding: 5px;
+      background-color: #3498DB;
+      border-radius: 5%;
+    }
+  }
+  .search_prices {
+    label.check_boxes {
+      padding: 5px;
+      background-color: #E74C3C;
+      border-radius: 5%;
+    }
+  }
 }

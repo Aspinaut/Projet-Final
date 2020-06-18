@@ -11,46 +11,6 @@
 }
 
 
-
-.comment {
-  display: flex;
-  flex-flow: column;
-  padding-right: 25vw;
-  margin-top: 2vh;
-
-  .comment_main {
-
-    ul {
-      list-style-type: none;
-    }
-
-    .user_avatar {
-
-    }
-
-    .comment_content {
-      width: 100vh;
-      background-color: #e6e6e6;
-    }
-
-    .comment_details {
-      list-style-type: none;
-
-    }
-
-    .comment_buttons {
-
-    }
-  }
-}
-
-.new_comment {
-  display: flex;
-  margin-top: 2vh;
-  padding-right: 25vw;
-
-}
-
 .filters {
   font-family: 'Bellota';
   .search_modes {

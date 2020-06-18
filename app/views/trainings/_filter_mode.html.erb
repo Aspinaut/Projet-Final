@@ -1,38 +1,51 @@
 <div class="container">
+
   <%= simple_form_for :search, method: "GET", url: root_path, remote: true do |form|%>
-    <div class="row">
-      <%= form.input :modes, label: "Mode", collection: $modes, as: :check_boxes %>
-    </div>
-    <div class="row">
-      <%= form.input :durations, label: "Durée (en semaines)", collection: $durations, as: :check_boxes %>
-    </div>
-    <div class="row">
-      <%= form.input :prices, label: "Prix", collection: $prices, as: :check_boxes %>
+    <div class="d-flex flex-row justify-content-center filters">
+      <div class="modes">
+        <%= form.input :modes, label: "Mode", collection: $modes, as: :check_boxes %>
+      </div>
+      <div class="durations">
+        <%= form.input :durations, label: "Durée (en semaines)", collection: $durations, as: :check_boxes %>
+      </div>
+      <div class="prices">
+        <%= form.input :prices, label: "Prix", collection: $prices, as: :check_boxes %>
+      </div>
     </div>
   <% end %>
 </div>
+
 <script>
   $(function () {
-    $('input[type=checkbox]').click(function () {
-      var chks = document.querySelectorAll(".check_boxes");
+    var chks_modes = $('[name="search[modes][]"]')
+    var chks_durations = $('[name="search[durations][]"]')
+    var chks_prices = $('[name="search[prices][]"]')
+    //var checkBoxes = $("input.check_boxes");
 
-      for (i = 0; i < chks.length; i++) {
-        chks[i].checked = false;
-      }
-      if (chks.length > 1 ) {
-        $(this)[0].checked = true;
-      }
-
-    });
-    $((this)).click(function () {
-      if ($(this)[0].checked == false) {
-        $(this)[0].checked = true;
-      } else {
-        $(this)[0].checked = false;
+    chks_modes.click(function () {
+      for (i = 0; i < chks_modes.length; i++) {
+        if ($(this)[0] !== chks_modes[i]) {
+          chks_modes[i].checked = false;
+        }
       }
     });
+    chks_durations.click(function () {
+      for (i = 0; i < chks_durations.length; i++) {
+        if ($(this)[0] !== chks_durations[i]) {
+          chks_durations[i].checked = false;
+        }
+      }
+    });
+    chks_prices.click(function () {
+      for (i = 0; i < chks_prices.length; i++) {
+        if ($(this)[0] !== chks_prices[i]) {
+          chks_prices[i].checked = false;
+        }
+      }
+    });
+
+    checkBoxes[0].attributes.class.nodeValue = checkBoxes[0].attributes.class.nodeValue + " d-flex flex-column";
+    checkBoxes[6].attributes.class.nodeValue = checkBoxes[6].attributes.class.nodeValue + " d-flex flex-column";
+    checkBoxes[13].attributes.class.nodeValue = checkBoxes[13].attributes.class.nodeValue + " d-flex flex-column";
    });
-
  </script>
-
- //document.getElementsByTagName("input")[1].name;

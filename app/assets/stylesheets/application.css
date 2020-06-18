@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Bellota:wght@700&display=swap');
 
 .card-custom {
   overflow: hidden;
@@ -67,7 +68,7 @@
 }
 
 .footer {
-  
+
 border: 0px solid grey;
 border-radius: 10px
 
@@ -177,7 +178,7 @@ border: 0px solid yellow;
 #element4 {
   margin-right: 30px;
 }
-
 nav {
   height: 75px;
+
 }

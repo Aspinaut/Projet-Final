@@ -1,22 +1,20 @@
 <div class="training">
-  <div class="jumbotron">
-    <h1 class="display-3"><%= @training.name %></h1>
+  <div class="jumbotron" style="background-image: url(<%= @training.background_img %>); background-size: cover; background-position: center center;">
+    <h1 class="display-5 text-white"> <%= @training.name %></h1>
     <hr class="my-4">
-    <h3 class="display-4"><%= @training.school.name %></h3>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Voir l'école</a>
+    <h3 class="display-6 text-warning"><%= @training.school.name %></h3>
   </div>
 
 
-
+<div class="infos" >
 <ul class="nav nav-tabs mb-5">
   <li class="nav-item">
     <a class="nav-link" data-toggle="tab" href="#home">Programme</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" data-toggle="tab" href="#profile">Sessions</a>
-  </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#lang">Les langages</a>
+    <a class="nav-link" data-toggle="tab" href="#school">L'école</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" data-toggle="tab" href="#more">En savoir plus</a>
@@ -29,6 +27,10 @@
       <% @programs.each do |program| %>
           <p><%= program.description %></p>
       <% end %>
+    <% end %>
+
+    <% @programs.each do |program| %>
+        <p><%= program.language %></p>
     <% end %>
   </div>
 
@@ -54,21 +56,23 @@
     </div>
   </div>
 
-  <div class="tab-pane fade" id="lang">
-    <% if @programs %>
-      <% @programs.each do |program| %>
-          <p><%= program.language %></p>
-      <% end %>
-    <% end %>
+
+
+  <div class="tab-pane fade" id="school">
   </div>
 
+
+
   <div class="tab-pane fade" id="more">
-    <%= link_to "Site de la formation : ", @training.url %>
+
+    <%= link_to "Aller sur le site de la formation", @training.url, class: "btn btn-info" %>
+
   </div>
+
+</div>
 </div>
 
   <div class="comments">
     <%= render 'comments' %>
     <%= render 'new_comment_form' %>
   </div>
-</div>

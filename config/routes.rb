@@ -9,8 +9,13 @@ Rails.application.routes.draw do
   resources :users, only: [:edit] do
     resources :pictures, only: [:create]
   end
-  root 'trainings#index'
+  
   resources :comments
+
+  root 'staticpages#home'
+  
+
+
 
   get "/staticpages" => "staticpages#guide"
 

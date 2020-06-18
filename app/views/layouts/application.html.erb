@@ -12,6 +12,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+
 
     <!-- Flatly : Bootswatch theme -->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-mhpbKVUOPCSocLzx2ElRISIORFRwr1ZbO9bAlowgM5kO7hnpRBe+brVj8NNPUiFs" crossorigin="anonymous">
@@ -50,13 +53,15 @@
         <%= link_to "Les formations", trainings_path, class: "nav-link" %>
       </div>
 
+      <div class="nav-item" id="element4">
+        <%= link_to "Foire Aux Questions", staticpages_path , :class => "nav-link" %>
+      </div>
+
       <div class="nav-item" id="element3">
         <%= link_to "Espace école", new_school_path, class: "nav-link" %>
       </div>
 
-      <div class="nav-item" id="element4">
-        <%= link_to "FAQ", staticpages_path , :class => "nav-link" %>
-      </div>
+
     </ul>
   </div>
 
@@ -90,7 +95,7 @@
 
             <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
       <div class="btn-group" role="group">
-      <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion</button>
+      <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Se connecter / S'inscrire</button>
 
       <div class="dropdown-menu" aria-labelledby="btnGroupDrop4" style="">
 

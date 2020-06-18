@@ -26,17 +26,15 @@
               <div class="container justify ">
                   <div class="footer">
 
-            <div class="toast-header">
-              <strong class="mr-auto">Les infos clés </strong>
-            </div>
+
 
             <div class="toast-body ">
               <ul>
-              <li class="badge badge-warning">Mode <%= training.mode %></li>
+              <li class="badge badge-warning"><%= training.mode %></li>
               <% if training.sessions.first %>
-                <li class="badge badge-danger">Environ <%= training.sessions.first.price.to_i %> €</li>
+                <li class="badge badge-danger"><%= training.sessions.first.price.to_i %> €</li>
               <% end %>
-              <li class="badge badge-info">Durée <%= training.duration.to_i %> semaines</li>
+              <li class="badge badge-info"><%= training.duration.to_i %> semaines</li>
               </ul>
             </div>
             </div>

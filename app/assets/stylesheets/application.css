@@ -96,17 +96,6 @@
  }
 
 
-a, a:visited {
-
-  color: #ffffff; /* couleur blanche */
-}
-
-a:hover, a:focus, a:active {
-    /* Les liens au survol, au focus, et actifs : on leur donne la couleur rouge pour l'exemple */
-  color: blue;
-}
-
-
 /*footer*/
 
 /*modification de la navbar*/
@@ -167,5 +156,25 @@ a:hover, a:focus, a:active {
 
 .form-group{
  font-weight: bold;
+}
 
+#element1 {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+#element2 {
+  margin-right: 30px;
+}
+
+#element3 {
+  margin-right: 30px;
+}
+
+#element4 {
+  margin-right: 30px;
+}
+
+nav {
+  height: 75px;
 }

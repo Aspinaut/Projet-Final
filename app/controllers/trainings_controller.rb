@@ -35,6 +35,7 @@ class TrainingsController < ApplicationController
     @training = Training.find(params[:id])
     @sessions = @training.sessions
     @programs = @training.programs
+    @program = @programs.find_by(training_id: params[:id])
     @comments = @training.comments
   end
 

@@ -11,43 +11,32 @@
 }
 
 
-
-.comment {
-  display: flex;
-  list-style-type: none;
-  flex-flow: column;
-  padding-right: 25vw;
-  margin-top: 2vh;
-
-  .comment_main {
-
-    ul {
-      list-style-type: none;
+.filters {
+  font-family: 'Bellota';
+  .search_modes {
+    label.check_boxes {
+      padding: 5px;
+      background-color: #f39c12;
+      border-radius: 5%;
     }
-
-    .user_avatar {
-
+  }
+  .search_durations {
+    label.check_boxes {
+      padding: 5px;
+      background-color: #3498DB;
+      border-radius: 5%;
     }
-
-    .comment_content {
-      width: 100vh;
-      background-color: #e6e6e6;
-    }
-
-    .comment_details {
-      list-style-type: none;
-
-    }
-
-    .comment_buttons {
-
+  }
+  .search_prices {
+    label.check_boxes {
+      padding: 5px;
+      background-color: #E74C3C;
+      border-radius: 5%;
     }
   }
 }
 
-.new_comment {
-  display: flex;
-  margin-top: 2vh;
-  padding-right: 25vw;
-
+.infos {
+  border: solid 2px red;
 }
+

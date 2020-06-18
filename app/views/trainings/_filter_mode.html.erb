@@ -13,26 +13,45 @@
 </div>
 <script>
   $(function () {
-    $('input[type=checkbox]').click(function () {
-      var chks = document.querySelectorAll(".check_boxes");
+    var chks_modes = $('[name="search[modes][]"]')
+    var chks_durations = $('[name="search[durations][]"]')
+    var chks_prices = $('[name="search[prices][]"]')
 
-      for (i = 0; i < chks.length; i++) {
-        chks[i].checked = false;
+    chks_modes.click(function () {
+      for (i = 0; i < chks_modes.length; i++) {
+        if ($(this)[0] !== chks_modes[i]) {
+          chks_modes[i].checked = false;
+        }
       }
-      if (chks.length > 1 ) {
-        $(this)[0].checked = true;
-      }
-
     });
-    $((this)).click(function () {
-      if ($(this)[0].checked == false) {
-        $(this)[0].checked = true;
-      } else {
-        $(this)[0].checked = false;
+    chks_durations.click(function () {
+      for (i = 0; i < chks_durations.length; i++) {
+        if ($(this)[0] !== chks_durations[i]) {
+          chks_durations[i].checked = false;
+        }
+      }
+    });
+    chks_prices.click(function () {
+      for (i = 0; i < chks_prices.length; i++) {
+        if ($(this)[0] !== chks_prices[i]) {
+          chks_prices[i].checked = false;
+        }
       }
     });
    });
-
+  // $(function () {
+  //   var chks = $("input.check_boxes");
+  //   var filterModes = document.getElementsByName("search[modes][]")
+  //   var filterDurations = document.getElementsByName("search[durations][]")
+  //   var filterPrices = document.getElementsByName("search[prices][]")
+  //
+  //   chks.click(function () {
+  //     if (chks[i].name === filter)
+  //       for (i = 0; i < chks.length; i++) {
+  //         if ($(this)[0] !== chks[i]) {
+  //           chks[i].checked = false;
+  //         }
+  //       }
+  //   });
+  //  });
  </script>
-
- //document.getElementsByTagName("input")[1].name;

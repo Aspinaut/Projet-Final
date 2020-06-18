@@ -5,6 +5,9 @@
     <h3 class="display-6 text-warning"><%= @training.school.name %></h3>
   </div>
 
+<div class="container-fluid red">
+
+  <div class="container green">
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <a class="nav-item nav-link" id="nav-program-tab" data-toggle="tab" href="#nav-program" role="tab" aria-controls="nav-program" aria-selected="true">Programme</a>
@@ -13,8 +16,11 @@
     <a class="nav-item nav-link" id="nav-info-tab" data-toggle="tab" href="#nav-info" role="tab" aria-controls="nav-info" aria-selected="false">En savoir plus</a>
   </div>
 </nav>
+
+
+
 <div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade" id="nav-program" role="tabpanel" aria-labelledby="nav-program-tab">
+  <div class="tab-pane fade active show" id="nav-program" role="tabpanel" aria-labelledby="nav-program-tab">
   <div class="card text">
     <div class="card-body">
       <% if @programs %>
@@ -68,9 +74,11 @@
   <br>
   </div>
 </div>
-
+ <br>
   <div class="comments">
     <%= render 'comments' %>
     <%= render 'new_comment_form' %>
+  </div>
+</div>
   </div>
 </div>

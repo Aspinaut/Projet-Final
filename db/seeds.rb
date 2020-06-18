@@ -213,7 +213,7 @@ end
 end
 
 23.times do |i|
-  Program.create(description: program_array[i][:description], language: program_array[i][:language], training_id: session_array[i][:trainingID])
+  Program.create(description: program_array[i][:description], language: program_array[i][:language], training_id: program_array[i][:trainingID])
 end
 
 puts "Seed completed !"

@@ -1,6 +1,14 @@
 <div class="new_comment">
   <div class="current_user_avatar">
-    <img data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1" alt="32x32" class="mr-2 rounded" style="width: 32px; height: 32px;" src="https://previews.123rf.com/images/salamatik/salamatik1801/salamatik180100019/92979836-ic%C3%B4ne-de-visage-anonyme-de-profil-personne-silhouette-grise-avatar-par-d%C3%A9faut-masculin-photo-placeholder-.jpg" data-holder-rendered="true">
+    <% if current_user %>
+      <% if current_user.picture.attached? %>
+        <%= image_tag current_user.picture %>
+      <% else %>
+        <img data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1" alt="64x64" class="mr-2 rounded" style="width: 64px; height: 64px;" src="https://previews.123rf.com/images/salamatik/salamatik1801/salamatik180100019/92979836-ic%C3%B4ne-de-visage-anonyme-de-profil-personne-silhouette-grise-avatar-par-d%C3%A9faut-masculin-photo-placeholder-.jpg" data-holder-rendered="true">
+      <% end %>
+    <% else %>
+      <img data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1" alt="32x32" class="mr-2 rounded" style="width: 64px; height: 64px;" src="https://previews.123rf.com/images/salamatik/salamatik1801/salamatik180100019/92979836-ic%C3%B4ne-de-visage-anonyme-de-profil-personne-silhouette-grise-avatar-par-d%C3%A9faut-masculin-photo-placeholder-.jpg" data-holder-rendered="true">
+    <% end %>
   </div>
   <%= form_tag "/comments", method: "post" do %>
     <textarea name="content" class="form-control" placeholder="Ecris ton commentaire"></textarea>

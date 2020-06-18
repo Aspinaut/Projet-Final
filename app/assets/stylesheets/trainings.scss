@@ -14,7 +14,7 @@
 
 .comment {
   display: flex;
-
+  list-style-type: none;
   flex-flow: column;
   padding-right: 25vw;
   margin-top: 2vh;
@@ -36,7 +36,7 @@
 
     .comment_details {
       list-style-type: none;
-      
+
     }
 
     .comment_buttons {

@@ -69,13 +69,8 @@
 
 .footer {
 
-<<<<<<< HEAD
-border: 0px solid grey;
-border-radius: 10px
-=======
   border: 0px solid grey;
   border-radius: 10px;
->>>>>>> eeb79c5dec7cfd5fd4be1171cb6fe8daa4c3714b
 
 }
 /*modification du footer*/
@@ -102,21 +97,13 @@ border-radius: 10px
 
 
 a, a:visited {
-<<<<<<< HEAD
-    color: #ffffff; /* couleur blanche */
-=======
 
   color: #ffffff; /* couleur blanche */
->>>>>>> eeb79c5dec7cfd5fd4be1171cb6fe8daa4c3714b
 }
 
 a:hover, a:focus, a:active {
     /* Les liens au survol, au focus, et actifs : on leur donne la couleur rouge pour l'exemple */
-<<<<<<< HEAD
-    color: #blue;
-=======
   color: blue;
->>>>>>> eeb79c5dec7cfd5fd4be1171cb6fe8daa4c3714b
 }
 
 
@@ -133,15 +120,6 @@ a:hover, a:focus, a:active {
 /*jumbotron*/
 
 .jumbotron-1 {
-<<<<<<< HEAD
-background:url('https://cdn.pixabay.com/photo/2014/05/02/21/49/home-office-336373_960_720.jpg') top center fixed;
-height: auto;
-background-size:cover;
-margin-top: 2px;
-margin-bottom:1px;
-padding-top: 3em;
-padding-bottom: 5px;
-=======
   background: url('https://cdn.pixabay.com/photo/2014/05/02/21/49/home-office-336373_960_720.jpg') top center fixed;
   height: auto;
   background-size:cover;
@@ -150,20 +128,11 @@ padding-bottom: 5px;
   padding-top: 3em;
   padding-bottom: 5px;
 
->>>>>>> eeb79c5dec7cfd5fd4be1171cb6fe8daa4c3714b
 }
 
 
 .jumbotron-2 {
   background:url('https://cdn.pixabay.com/photo/2015/02/02/11/08/office-620817_960_720.jpg') top center fixed;
-<<<<<<< HEAD
-height: auto;
-background-size:cover;
-margin-top: 2px;
-margin-bottom:1px;
-padding-top: 3em;
-padding-bottom: 5px;
-=======
   height: auto;
   background-size:cover;
   margin-top: 2px;
@@ -171,27 +140,15 @@ padding-bottom: 5px;
   padding-top: 3em;
   padding-bottom: 5px;
 
->>>>>>> eeb79c5dec7cfd5fd4be1171cb6fe8daa4c3714b
 }
 
 .green {
   border: 0px solid green;
  }
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> eeb79c5dec7cfd5fd4be1171cb6fe8daa4c3714b
 .header-form {
   font-size: 50px; /* Paragraphes de 14 pixels */
   text-align: center;
-<<<<<<< HEAD
-   color: white;
-}
-
-.yellow {
-border: 0px solid yellow;
-=======
   color: white;
 
 }
@@ -199,7 +156,6 @@ border: 0px solid yellow;
 .yellow {
   border: 0px solid yellow;
 
->>>>>>> eeb79c5dec7cfd5fd4be1171cb6fe8daa4c3714b
 }
 
 .red {
@@ -207,35 +163,9 @@ border: 0px solid yellow;
   margin-right: auto;
 }
 
-<<<<<<< HEAD
-.form-group{
- font-weight: bold;
-}
-
-#element1 {
-  margin-right: 30px;
-  margin-left: 30px;
-}
-
-#element2 {
-  margin-right: 30px;
-}
-
-#element3 {
-  margin-right: 30px;
-}
-
-#element4 {
-  margin-right: 30px;
-}
-nav {
-  height: 75px;
-
-=======
 }
 
 .form-group{
  font-weight: bold;
 
->>>>>>> eeb79c5dec7cfd5fd4be1171cb6fe8daa4c3714b
 }

@@ -6,7 +6,6 @@
         <%= form_tag user_pictures_path(current_user), multipart: true do %>
         <%= label_tag "Mettre à jour votre image de profil" %><br/>
         <%= file_field_tag :picture %>
-        <%= submit_tag "Changer"%>
         <% end %>
       </div>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -32,22 +31,25 @@
         <% end %>
 
         <div class="form-group">
-          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-          <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
-          <% if @minimum_password_length %>
-            <br />
+          <%= f.label :password %> 
+
+            <% if @minimum_password_length %>
             <em><%= @minimum_password_length %> characters minimum</em>
+
+          <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+                 <small class="form-text text-muted mt-2">Laissez la case vide si vous ne voulez pas le changer.</small>
           <% end %>
         </div>
 
         <div class="form-group">
           <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'  %>
+             <small class="form-text text-muted mt-2">Laissez la case vide si vous ne voulez pas le changer.</small>
         </div>
 
         <div class="form-group">
           <%= f.label :current_password %> <i>(renseignez votre mot de passe actuel pour confirmer vos changements)</i><br />
-          <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control'  %>
+       <%= f.password_field :current_password, class: "form-control btn-success", id: "input-password-confirm", autocomplete: "current-password", placeholder: "SAISIE OBLIGATOIRE" %>
         </div>
 
         <div class="actions">
@@ -55,9 +57,9 @@
         </div>
       <% end %>
 
-      <div class="container col-6 mt-5 ">
-        <div class="container bg-white col-8 rounded shadow p-3">
-          <h3>Supprimer mon compte</h3>
+      <div class="container col-12 mt-5 ">
+
+          <h4>Supprimer mon compte</h4>
           <hr>
 
           <p><%= button_to "Supprimer", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class: 'btn btn-danger'%></p>

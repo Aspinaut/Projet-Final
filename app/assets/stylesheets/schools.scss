@@ -1,13 +1,15 @@
 // Place all the styles related to the schools controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+//
 .comment {
+  max-width:50vw;
   margin-bottom: 2vh;
-  margin-left: 25vw;
+  margin-left: 1vw;
 }
 
 .user_avatar {
+  max-width:5vw;
   *{
     width: 64px;
     height: 64px;
@@ -27,10 +29,11 @@
 }
 
 .new_comment {
-  margin-left: 25vw;
+  max-width:20vw;
+  margin-left: 1vw;
 }
 
 .comment_author {
-  margin-left: -40vw;
   margin-top: 3vh;
+  margin-left: 2vw;
 }

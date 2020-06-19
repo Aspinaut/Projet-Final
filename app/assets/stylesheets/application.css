@@ -30,7 +30,6 @@
   border-color: inherit;
 }
 
-/* First border-left-width setting is a fallback */
 .card-custom-img::after {
   position: absolute;
   content: '';
@@ -73,7 +72,6 @@
   border-radius: 10px;
 
 }
-/*modification du footer*/
 
  .footer-header {
    margin-top: 20px;
@@ -96,17 +94,10 @@
  }
 
 
-/*footer*/
-
-/*modification de la navbar*/
-
-
 .propositionlogo2.png {
   max-width: 50%;
   height: auto;
 }
-
-/*jumbotron*/
 
 .jumbotron-1 {
   background: url('https://cdn.pixabay.com/photo/2014/05/02/21/49/home-office-336373_960_720.jpg') top center fixed;
@@ -131,28 +122,12 @@
 
 }
 
-.green {
-  border: 0px solid green;
- }
-
 .header-form {
   font-size: 50px; /* Paragraphes de 14 pixels */
   text-align: center;
   color: white;
 
 }
-
-.yellow {
-  border: 0px solid yellow;
-
-}
-
-.red {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
 
 .form-group{
  font-weight: bold;

@@ -3,7 +3,6 @@
   <div class="container col-6 mt-5 ">
     <div class="container bg-white col-8 rounded shadow p-3">
       <%= form_with model: @school do |form| %>
-
         <div class="form-group">
           <%= form.label :nom %>:<br />
           <%=form.text_field :name, class: 'form-control', placeholder: 'Nom de l\'école :'%>
@@ -29,6 +28,7 @@
           <%= form.submit "Envoyer", class: 'btn btn-success' %>
         </div>
       <% end %>
+
     </div>
   </div>
 </div>

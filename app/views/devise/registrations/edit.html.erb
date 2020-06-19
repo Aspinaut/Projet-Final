@@ -5,9 +5,14 @@
       <div class="form-group">
         <%= form_tag user_pictures_path(current_user), multipart: true do %>
         <%= label_tag "Mettre à jour votre image de profil" %><br/>
-        <%= file_field_tag :picture %>
+        <%= file_field_tag :picture %><br/><br/>
+        <%= submit_tag "Enregistrer la photo", class: 'btn btn-success'%>
         <% end %>
       </div>
+      <br/><br/>
+
+      <h4>Mettre à jour vos données personnelles</h4>
+      <br/>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 

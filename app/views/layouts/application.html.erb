@@ -40,7 +40,7 @@
   <div class="logorwp">
   <%= link_to root_path do %>
   <%= image_tag("propositionlogo2.png", size: "140x60") %>
-   <% end %> 
+   <% end %>
    </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,10 +97,24 @@
       <div class="btn-group" role="group">
       <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Se connecter / S'inscrire</button>
 
-      <div class="dropdown-menu" aria-labelledby="btnGroupDrop4" style="">
 
-      <%= link_to "Me connecter", new_user_session_path%><br>
-      <%= link_to "M'inscrire", new_user_registration_path%>
+  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    <div class="btn-group" role="group">
+      <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon compte</button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop4" style="">
+          <% if signed_in? %>
+            <% if current_user.is_school === true %>
+              <%= link_to "Mon profil", admin_index_path %>
+            <% else %>
+              <%= link_to "Mon profil", edit_user_registration_path %>
+            <% end %>
+            <br>
+            <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete%>
+          <% else %>
+            <%= link_to "Me connecter", new_user_session_path%><br>
+            <%= link_to "M'inscrire", new_user_registration_path%>
+          <% end %>
+        </div>
       </div>
     </div>
 
@@ -110,7 +124,7 @@
 </nav>
 
   <body>
-
+      <%= render 'flash_messages'%>
       <%= yield %>
 
 

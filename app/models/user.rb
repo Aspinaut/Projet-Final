@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_one_attached :picture
   after_create :welcome_send
 
+  has_one :school
+
   def full_name
     self.first_name + " " + self.last_name
   end

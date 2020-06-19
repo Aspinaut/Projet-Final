@@ -1,0 +1,5 @@
+<div class="btn-group-vertical ml-2">
+  <% @user.school.trainings.each do |training| %>
+  <%=button_to training.name, school_training_path(training.school_id, training), method: "get" ,class: "btn btn-primary mb-1"%>
+  <% end %>
+</div>

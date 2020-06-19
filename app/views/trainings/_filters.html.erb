@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <h2 class="text-center">Tu cherches une formation en developpement web ? </h2>
+  <hr>
+    <%= simple_form_for :search, method: "GET", url: root_path, remote: true do |form|%>
+      <%= form.input :modes, label: "Modes : ", collection: $modes, as: :check_boxes%>
+      <%= form.input :durations, label: "Duration : ", collection: $durations, as: :check_boxes %>
+    <% end %>
+
+</div>

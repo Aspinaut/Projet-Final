@@ -1,8 +1,8 @@
 <div class="container12">
 
   <%= simple_form_for :search, method: "GET", url: trainings_path, remote: true do |form|%>
-    <div class="d-flex flex-row justify-content-center filters">
-      <div class="modes">
+    <div class="d-flex justify-content-center filters">
+      <div class="text-center modes">
         <%= form.input :modes, label: "Mode", collection: $modes, as: :check_boxes %>
       </div>
       <div class="durations">
@@ -44,8 +44,8 @@
       }
     });
 
-    checkBoxes[0].attributes.class.nodeValue = checkBoxes[0].attributes.class.nodeValue + " d-flex flex-column";
-    checkBoxes[6].attributes.class.nodeValue = checkBoxes[6].attributes.class.nodeValue + " d-flex flex-column";
-    checkBoxes[13].attributes.class.nodeValue = checkBoxes[13].attributes.class.nodeValue + " d-flex flex-column";
+    checkBoxes[0].attributes.class.nodeValue = checkBoxes[0].attributes.class.nodeValue + " d-flex flex-column align-items-start";
+    checkBoxes[6].attributes.class.nodeValue = checkBoxes[6].attributes.class.nodeValue + " d-flex flex-column align-items-start";
+    checkBoxes[13].attributes.class.nodeValue = checkBoxes[13].attributes.class.nodeValue + " d-flex flex-column align-items-start";
    });
  </script>

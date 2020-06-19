@@ -165,7 +165,7 @@ User.create(email: 'educatel@yopmail.com', password: 'motdepasse', is_admin: 'tr
 User.create(email: '3W@yopmail.com', password: 'motdepasse', is_admin: 'true', first_name: '3W', last_name: '3W', is_school: true)
 User.create(email: 'piscine@yopmail.com', password: 'motdepasse', is_admin: 'true', first_name: 'piscine', last_name: 'piscine', is_school: true)
 User.create(email: 'admin@yopmail.com', password: 'motdepasse', is_admin: 'true', first_name: 'Admin', last_name: 'Admin', is_school: true)
-User.create(email: 'school@yopmail.com', password: 'motdepasse', is_school: 'true', first_name: 'School', last_name: 'School', is_school: true)
+User.create(email: 'school@yopmail.com', password: 'motdepasse', is_admin: 'true', first_name: 'School', last_name: 'School', is_school: true)
 
 
 7.times do |i|
@@ -228,4 +228,21 @@ end
   Program.create(description: program_array[i][:description], language: program_array[i][:language], training_id: program_array[i][:trainingID])
 end
 
+
+# Seed users
+User.create(email: 'Alex@yopmail.com', password: 'motdepasse', is_admin: false, first_name: 'Alex', last_name: 'Duran', is_school: false)
+User.create(email: 'Sarah@yopmail.com', password: 'motdepasse', is_admin: false, first_name: 'Sarah', last_name: 'Robert', is_school: false)
+User.create(email: 'Alice@yopmail.com', password: 'motdepasse', is_admin: false, first_name: 'Alice', last_name: 'Martin', is_school: false)
+User.create(email: 'Olivier@yopmail.com', password: 'motdepasse', is_admin: false, first_name: 'Olivier', last_name: 'Leroux', is_school: false)
+
+
+
+Comment.create(content: "Super formation! J'en suis très satisfait", user_id: 14, training_id: 2)
+Comment.create(content: "Franchement c'est top comme formation. Je recommande!", user_id: 11, training_id: 3)
+Comment.create(content: "Parfaite pour une reconversion rapide et efficace!", user_id: 12, training_id: 4)
+Comment.create(content: "J'ai décroché mon premier CDI grâce à cette formation géniale!", user_id: 13, training_id: 3)
+
+
+
 puts "Seed completed !"
+

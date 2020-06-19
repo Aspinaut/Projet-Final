@@ -1,90 +1,34 @@
+<div class="jumbotron text-center">
+  <h2>Inscrivez votre école</h2>
+  <div class="container col-6 mt-5 ">
+    <div class="container bg-white col-8 rounded shadow p-3">
+<%= form_with model: @school do |form| %>
 
-
-
-<div class="jumbotron-1">
-  <div class="container green ">
-      <div class="header-form ">
-        
-      <b>Inscrivez votre école</b>
-       </div>
-       <div class="container col-sm-8 btn-holer yellow">
-
-
-              <div class="bg-white col-sm-8 rounded shadow p-3 red">
-               <%= form_with model: @school do |form| %>
-
-                <div class="form-group">
-                    <%= form.label 'nom :'%><br />
-                    <%=form.text_field :name, class: 'form-control', placeholder: 'Nom de l\'école :'%>
-                </div>
-                <div class="form-group">
-                    <%= form.label 'Site internet :' %><br />
-                    <%=form.text_field :website, class: 'form-control', placeholder: 'www.mon_ecole.com'%>
-                </div>
-
-                <div class="form-group">
-                    <%= form.label 'Année de création :' %><br />
-                    <%=form.text_field :creation_year, class: 'form-control', placeholder: 'Ex: 1990'%>
-                </div>
-
-                <div class="form-group">
-                    <%= form.label 'Nombre de campus : ' %><br />
-                    <%=form.text_field :campus_nb, class: 'form-control', placeholder: 'Ex: 3'%>
-                </div>
-
-                <div class="form-group">
-                    <%= form.label 'N° de Siret :' %><br />
-                    <%=form.text_field :campus_nb, class: 'form-control'%>
-                </div>
-  
-        
-                <hr>
-                <div class="actions">
-                  <%= form.submit "Envoyer", class: 'btn btn-success btn-lg btn-block' %>
-                </div>
-
-              <% end %>
-                 
-              </div>
-          
-
-
-        </div>
+  <div class="form-group">
+    <%= form.label :nom %>:<br />
+    <%=form.text_field :name, class: 'form-control', placeholder: 'Nom de l\'école :'%>
+  </div>
+  <div class="form-group">
+    <%= form.label 'Site internet' %>:<br />
+    <%=form.text_field :website, class: 'form-control', placeholder: 'www.mon_ecole.com'%>
+  </div>
+  <div class="form-group">
+    <%= form.label 'Année de création :' %>:<br />
+    <%=form.text_field :creation_year, class: 'form-control', placeholder: 'Ex: 1990'%>
+  </div>
+  <div class="form-group">
+    <%= form.label 'Nombre de campus :' %>:<br />
+    <%=form.text_field :campus_nb, class: 'form-control', placeholder: 'Ex: 3'%>
+  </div>
+  <div class="form-group">
+    <%= form.label 'N° de Siret :' %>:<br />
+    <%=form.text_field :campus_nb, class: 'form-control'%>
+  </div>
+    <hr>
+  <div class="actions">
+    <%= form.submit "Envoyer", class: 'btn btn-success' %>
+  </div>
+<% end %>
     </div>
-
+  </div>
 </div>
-    
- 
-
-
-
-
-
-  
-
-  
-    
-
-
-
-
-
-
-
-
-
-
-
- </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :admin
   resources :schools do
     resources :trainings, except: [:index]
   end

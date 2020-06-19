@@ -1,0 +1,14 @@
+<div class="container-fluid bg-light text-center">
+  <h1> <%= @user.school.name %> </h1>
+  <h3> Vous avez <%= @user.school.trainings.count %> formation<%if @user.school.trainings.size > 1%>s<%end%></h3>
+  <hr>
+</div>
+
+<div class="ml-2 d-flex row">
+
+  <%= render 'school_trainings', user: @user %>
+
+  <div class="ml-auto mr-5">
+    <%= button_to "Mes informations", edit_user_registration_path, method: "get",class: "btn btn-info" %>
+  </div>
+</div>

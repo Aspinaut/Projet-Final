@@ -37,7 +37,7 @@
   <div class="logorwp">
   <%= link_to trainings_path do %>
   <%= image_tag("propositionlogo2.png", size: "140x60") %>
-   <% end %> 
+   <% end %>
    </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,7 +76,11 @@
       <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon compte</button>
         <div class="dropdown-menu" aria-labelledby="btnGroupDrop4" style="">
           <% if signed_in? %>
-            <%= link_to "Mon profil", edit_user_registration_path %>
+            <% if current_user.is_school === true %>
+              <%= link_to "Mon profil", admin_index_path %>
+            <% else %>
+              <%= link_to "Mon profil", edit_user_registration_path %>
+            <% end %>
             <br>
             <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete%>
           <% else %>
@@ -90,7 +94,7 @@
 </nav>
 
   <body>
-
+      <%= render 'flash_messages'%>
       <%= yield %>
 
 

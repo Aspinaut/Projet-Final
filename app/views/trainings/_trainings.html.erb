@@ -3,6 +3,7 @@
 
   <div class="container green">
     <div class="row pt-3 m-auto yellow">
+      <% if @trainings %>
        <% @trainings.each do |training|%>
         <article class ="col-xs-12 col-sm-12 col md-4 col-lg-4 p-2 card-index">
 
@@ -12,26 +13,28 @@
 
             <div class="card-custom-avatar">
               <img class="img-fluid" src="<%= training.school.logo_url %>" alt="Avatar">
-              
+
             </div>
             <div class="card-body" style="overflow-y: auto">
+              <p><%= training.school.name %></p>
               <h4 class="card-title"> <%= training.name %></h4>
-              <p class="card-text" style="text-align: justify;"  ><%=training.description%> </p>
+              <p class="card-text" style="text-align: justify;"><%=training.description%>
+              </p>
             </div>
 
 
               <div class="container justify ">
                   <div class="footer">
 
-            <div class="toast-header">
-              <strong class="mr-auto">Les infos clés </strong>
-            </div>
+
 
             <div class="toast-body ">
               <ul>
-              <li class="badge badge-warning">Mode <%= training.mode %></li>
-                  <li class="badge badge-danger"><%= training.hours_per_day %> heures/jour</li>
-                  <li class="badge badge-info">Durée <%= training.duration.to_i %> semaines</li>
+              <li class="badge badge-warning"><%= training.mode %></li>
+              <% if training.sessions.first %>
+                <li class="badge badge-danger"><%= training.sessions.first.price.to_i %> €</li>
+              <% end %>
+              <li class="badge badge-info"><%= training.duration.to_i %> semaines</li>
               </ul>
             </div>
             </div>
@@ -46,8 +49,8 @@
             </div>
           </div>
         </article>
-   <% end %>
-     </div>
-
+      <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

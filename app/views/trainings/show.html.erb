@@ -1,51 +1,48 @@
 <div class="training">
   <div class="jumbotron" style="background-image: url(<%= @training.background_img %>); background-size: cover; background-position: center center;">
-    <h1 class="display-5 text-white"> <%= @training.name %></h1>
+    <span class="display-5 text-white"><%= @training.name %></span>
     <hr class="my-4">
-    <h3 class="display-6 text-warning"><%= @training.school.name %></h3>
+    <span class="display-5 text-warning"><%= @training.school.name %></span>
   </div>
 
+<div class="container-fluid red">
 
-<div class="infos" >
-<ul class="nav nav-tabs mb-5">
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#home">Programme</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#profile">Sessions</a>
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#school">L'école</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#more">En savoir plus</a>
-  </li>
-</ul>
+  <div class="container green">
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link" id="nav-program-tab" data-toggle="tab" href="#nav-program" role="tab" aria-controls="nav-program" aria-selected="true">Programme</a>
+    <a class="nav-item nav-link" id="nav-session-tab" data-toggle="tab" href="#nav-session" role="tab" aria-controls="nav-session" aria-selected="false">Sessions</a>
+    <a class="nav-item nav-link" id="nav-school-tab" data-toggle="tab" href="#nav-school" role="tab" aria-controls="nav-school" aria-selected="false">L'école</a>
+    <a class="nav-item nav-link" id="nav-info-tab" data-toggle="tab" href="#nav-info" role="tab" aria-controls="nav-info" aria-selected="false">En savoir plus</a>
+  </div>
+</nav>
 
-  <div id="myTabContent" class="tab-content">
-  <div class="tab-pane fade" id="home">
-    <% if @programs %>
-      <% @programs.each do |program| %>
-          <p><%= program.description %></p>
+
+
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade active show" id="nav-program" role="tabpanel" aria-labelledby="nav-program-tab">
+  <div class="card text">
+    <div class="card-body">
+      <% if @programs %>
+      <p><%= @program.description %></p>
+      <p><strong>Les languages clés: </strong> <%= @program.language %></p>
       <% end %>
-    <% end %>
-
-    <% @programs.each do |program| %>
-        <p><%= program.language %></p>
-    <% end %>
+    </div>
   </div>
-
-  <div class="tab-pane fade" id="profile">
+  </div>
+  <div class="tab-pane fade" id="nav-session" role="tabpanel" aria-labelledby="nav-session-tab">
     <div class="row">
       <% if @sessions %>
         <% @sessions.each do |session| %>
           <% if session.start_date && session.end_date %>
             <div class="col">
-              <div class="card-header border-secondary mb-3"> Session à venir </div>
+              <div class="card-header border-secondary mb-3"> Sessions à venir 
+              </div>
               <div class="card-body">
                 <p class="card-text"><p><i class="fa fa-calendar-check-o" aria-hidden="true"></i><%=  " Commence le : #{session.start_date.strftime('%d/%m/%y')}" %></p>
                 <p><i class="fa fa-calendar-times-o" aria-hidden="true"></i><%= " Finit le : #{session.end_date.strftime('%d/%m/%y')}"%></p>
                 <p><i class="fa fa-map-marker" aria-hidden="true"></i><%= "    #{session.location}" %></p>
-                <p><i class="fa fa-eur" aria-hidden="true"></i><%= "    #{session.price.to_i}" %></p>
+                <p><i class="fa fa-eur" aria-hidden="true"></i><%= "#{session.price.to_i}" %></p>
               </div>
             </div>
           <% end %>
@@ -55,24 +52,33 @@
       <% end %>
     </div>
   </div>
+  <div class="tab-pane fade" id="nav-school" role="tabpanel" aria-labelledby="nav-school-tab">
 
-
-
-  <div class="tab-pane fade" id="school">
+  <div class="card text-center">
+    <div class="card-body">
+        <h4 class="card-title" style="text-align:center"><%= @training.school.name %></h4>
+        <img src="<%= @training.school.logo_url %>" alt="@training.school.website" class="  img-thumbnail" width="200" height="232" style="float:center">
+        <p class="card text-center">
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">Nombre de campus : <%= @training.school.campus_nb %></li>
+        <li class="list-group-item">Date de création : <%= @training.school.creation_year %></li>
+        <li class="list-group-item"><%= link_to "Site web de l'école", @training.school.website, class: "btn btn-link" %></li>
+        </ul>
+        </p>
+      </div>
+    </div>
   </div>
 
-
-
-  <div class="tab-pane fade" id="more">
-
-    <%= link_to "Aller sur le site de la formation", @training.url, class: "btn btn-info" %>
-
+  <div class="tab-pane fade" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
+      <%= link_to "Aller sur le site de la formation", @training.url, class: "btn btn-info" %>
+  <br>
   </div>
-
 </div>
-</div>
-
+ <br>
   <div class="comments">
     <%= render 'comments' %>
     <%= render 'new_comment_form' %>
   </div>
+</div>
+  </div>
+</div>

@@ -7,14 +7,12 @@
 .card-index:hover {
   -webkit-box-shadow: 0px 0px 20px -13px rgba(0,0,0,0.59);
   -moz-box-shadow: 0px 0px 20px -13px rgba(0,0,0,0.59);
-  -box-shadow: 0px 0px 20px -13px rgba(0,0,0,0.59);
+  -box-shadow: 0px 0px 20px -13px rgba(0,0,0,0.59)
 }
-
-
 
 .comment {
   display: flex;
-
+  list-style-type: none;
   flex-flow: column;
   padding-right: 25vw;
   margin-top: 2vh;
@@ -36,7 +34,7 @@
 
     .comment_details {
       list-style-type: none;
-      
+
     }
 
     .comment_buttons {
@@ -52,7 +50,64 @@
 
 }
 
-.infos {
-  border: solid 2px red;
+
+
+
+.filters {
+  .search_modes {
+    label.check_boxes {
+      padding: 5px;
+      background-color: #f39c12;
+      border-radius: 5%;
+    }
+  }
+  .search_durations {
+    label.check_boxes {
+      padding: 5px;
+      background-color: #3498DB;
+      border-radius: 5%;
+    }
+  }
+  .search_prices {
+    label.check_boxes {
+      padding: 5px;
+      background-color: #E74C3C;
+      border-radius: 5%;
+    }
+  }
 }
 
+.modes {
+  margin-right: 80px;
+}
+
+.durations {
+  margin-right: 80px;
+}
+
+.prices {
+  margin-right: 80px;
+}
+
+ .check_boxes {
+      text-align:center;
+     }
+
+.check_boxes input {
+  margin: 0 5px 0 30px;
+}
+
+.display-5{
+  
+background-color:rgba(0, 0, 255, 0.5);
+font-size: 70px;
+
+}
+
+.display-6{
+color: white;
+background-color:rgba(255, 151, 0, 0.5);
+font-size: 55px;
+
+
+}

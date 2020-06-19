@@ -17,7 +17,7 @@ User.destroy_all
 
 # Reset the counters to 0
 ActiveRecord::Base.connection.tables.each do |t|
-  ActiveRecord::Base.connection.reset_pk_sequence!(t)
+ActiveRecord::Base.connection.reset_pk_sequence!(t)
 end
 
 # Array of hashes
@@ -36,7 +36,7 @@ training_array = [
   {schoolID: 1, name: "Full Stack web", duration: 12, description: "Refaire Airbnb en 12 semaines", url: "https://www.thehackingproject.org/courses/code?locale=fr", mode: "à distance ou présentiel", helpForAJob: false, hours_per_day: 4, background_img: "https://images.pexels.com/photos/3183186/pexels-photo-3183186.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},
   {schoolID: 1, name: "THP Next", duration: 12, description: "12 semaines pour être professionnel du code", url: "https://thehackingproject.lpages.co/pr%C3%A9sentation-thp-next-summer-2020/", mode: "à distance ou présentiel", helpForAJob: true, hours_per_day: 4, background_img: "https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},
   {schoolID: 2, name: "Full Stack Developpement Web", duration: 10, description: "Apprenez à coder en 10 semaines", url: "https://www.lacapsule.academy/apprendre-a-coder", mode: "à distance ou présentiel", helpForAJob: false, hours_per_day: 8, background_img: "https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},
-  {schoolID: 2, name: "Part time - Tech & Business", duration: 13, description: "Le Coding Bootcamp à temps partiel, pour apprendre", url: "https://www.lacapsule.academy/coding-bootcamp-part-time", mode: "à distance ou présentiel", helpForAJob: false, hours_per_day: 2, background_img: "https://images.pexels.com/photos/3182822/pexels-photo-3182822.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},
+  {schoolID: 2, name: "Part time - Tech & Business", duration: 13, description: "Le Coding Bootcamp à temps partiel, pour apprendre à coder et devenir autonome techniquement", url: "https://www.lacapsule.academy/coding-bootcamp-part-time", mode: "à distance ou présentiel", helpForAJob: false, hours_per_day: 2, background_img: "https://images.pexels.com/photos/3182822/pexels-photo-3182822.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},
   {schoolID: 3, name: "Développeur web (temps plein)", duration: 9, description: "En 9 semaines intensives, apprenez toutes les compétences d'un développeur web junior pour progresser dans votre métier ou changer de carrière.", url: "https://www.lewagon.com/fr/web-development-course/full-time", mode: "à distance ou présentiel", helpForAJob: true, hours_per_day: 8, background_img: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},
   {schoolID: 3, name: "Développeur web (temps partiel)", duration: 24, description: "En 24 semaines à temps partiel, apprenez toutes les compétences d'un développeur web junior pour progresser dans votre métier ou changer de carrière.", url: "https://www.lewagon.com/fr/web-development-course/part-time", mode: "à distance ou présentiel", helpForAJob: true, hours_per_day: 4, background_img:"https://images.unsplash.com/photo-1568992688065-536aad8a12f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
   {schoolID: 4, name: "Développeur web", duration: 24, description: "6 mois pour devenir développeur web, c’est un objectif concret.", url: "https://oclock.io/formations/developpeur-web", mode: "à distance", helpForAJob: true, hours_per_day: 8, background_img: "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},
@@ -51,7 +51,7 @@ training_array = [
   {schoolID: 4, name: "Professionnalisation WordPress", duration: 12, description: "Une formation pour se professionnaliser en WordPress, le CMS utilisé par 35% du web !", url: "https://oclock.io/formations/developpeur-wordpress", mode: "à distance", helpForAJob: true, hours_per_day: 8, background_img:"https://images.unsplash.com/photo-1563461661026-49631dd5d68e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
   {schoolID: 4, name: "Spécialisation Data et conception d'API", duration: 4, description: "Une formation pour apprendre à jongler avec des données en JavaScript.", url: "https://oclock.io/formations/developpeur-data-api", mode: "à distance", helpForAJob: true, hours_per_day: 8, background_img:"https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
   {schoolID: 4, name: "Professionnalisation Data et conception d'API", duration: 12, description: "Une formation pour se professsionnaliser avec les données en JavaScript.", url: "https://oclock.io/formations/developpeur-data-api", mode: "à distance", helpForAJob: true, hours_per_day: 8, background_img:"https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
-  {schoolID: 5, name: "Développeur web et web mobile DWWM", duration: 36, description: "Avec Educatel, vous pouvez apprendre le métier de développeur web tout en préparant le passage de votre titre professionnel, reconnu par l’Etat.", url: "https://www.educatel.fr/formation-web-informatique/developpeur-web-mobile", mode: "à distance", helpForAJob: true, hours_per_day: nil, background_img:"https://images.unsplash.com/photo-1573164713619-24c711fe7878?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
+  {schoolID: 5, name: "Développeur web et web mobile", duration: 36, description: "Avec Educatel, vous pouvez apprendre le métier de développeur web tout en préparant le passage de votre titre professionnel, reconnu par l’Etat.", url: "https://www.educatel.fr/formation-web-informatique/developpeur-web-mobile", mode: "à distance ou présentiel", helpForAJob: true, hours_per_day: nil, background_img:"https://images.unsplash.com/photo-1573164713619-24c711fe7878?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
   {schoolID: 6, name: "Développeur Web Javascript PHP", duration: 16, description: "Devenez développeur web junior en 4 mois en maîtrisant les 5 langages les plus demandés sur le marché du travail : HTML, CSS, JavaScript, SQL et PHP.", url: "https://3wa.fr/formations/developpeur-web-php/developpeur-web-php-javascript-4-mois-temps-plein/", mode: "à distance", helpForAJob: true, hours_per_day: 8, background_img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
   {schoolID: 6, name: "Développeur Full Stact React Node.Js", duration: 48, description: "La 3W Academy propose une formation en alternance au métier de Développeur Web permettant de se spécialiser sur les technologies les plus demandées sur le marché : Node.Js et React.", url: "https://3wa.fr/formations/developpeur-web-php/developpeur-full-stack-react-node-js-1-an-alternance/", mode: "à distance et en alternance", helpForAJob: true, hours_per_day: 8, background_img:"https://images.unsplash.com/photo-1558959356-4b2c36036b8c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
   {schoolID: 7, name: "Développeur Web", duration: 12, description: "Un programme de 490h pour devenir développeur web et changer de vie.", url: "https://www.lapiscine.pro/formations/developpeur/", mode: "présentiel", helpForAJob: true, hours_per_day: 8, background_img:"https://images.unsplash.com/photo-1558959355-d9922ff0b767?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"}
@@ -85,11 +85,52 @@ session_array = [
   {trainingID: 9, start_date: DateTime.new(2020,8,24,0,0), end_date: DateTime.new(2021,2,9,0,0), location: "à distance", price: 6500},
   {trainingID: 9, start_date: DateTime.new(2020,10,5,0,0), end_date: DateTime.new(2021,3,22,0,0), location: "à distance", price: 6500},
   {trainingID: 10, start_date: DateTime.new(2020,10,3,0,0), end_date: DateTime.new(2021,3,6,0,0), location: "à distance", price: 6500},
-
-]
-
-
-program_array = [
+  {trainingID: 11, start_date: DateTime.new(2020,8,24,0,0), end_date: DateTime.new(2020,11,27,0,0), location: "à distance", price: 3900},
+  {trainingID: 11, start_date: DateTime.new(2020,5,10,0,0), end_date: DateTime.new(2021,1,15,0,0), location: "à distance", price: 3900},
+  {trainingID: 12, start_date: DateTime.new(2020,7,8,0,0), end_date: DateTime.new(2020,8,6,0,0), location: "à distance", price: 2000},
+  {trainingID: 12, start_date: DateTime.new(2020,7,29,0,0), end_date: DateTime.new(2020,8,27,0,0), location: "à distance", price: 2000},
+  {trainingID: 12, start_date: DateTime.new(2020,9,7,0,0), end_date: DateTime.new(2020,10,7,0,0), location: "à distance", price: 2000},
+  {trainingID: 12, start_date: DateTime.new(2020,10,21,0,0), end_date: DateTime.new(2020,11,19,0,0), location: "à distance", price: 2000},
+  {trainingID: 12, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,1,8,0,0), location: "à distance", price: 2000},
+  {trainingID: 13, start_date: DateTime.new(2020,7,8,0,0), end_date: DateTime.new(2020,10,1,0,0), location: "à distance", price: 2900},
+  {trainingID: 13, start_date: DateTime.new(2020,7,29,0,0), end_date: DateTime.new(2020,10,27,0,0), location: "à distance", price: 2900},
+  {trainingID: 13, start_date: DateTime.new(2020,9,7,0,0), end_date: DateTime.new(2020,11,22,0,0), location: "à distance", price: 2900},
+  {trainingID: 13, start_date: DateTime.new(2020,10,21,0,0), end_date: DateTime.new(2021,1,14,0,0), location: "à distance", price: 2900},
+  {trainingID: 13, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,3,5,0,0), location: "à distance", price: 2900},
+  {trainingID: 14, start_date: DateTime.new(2020,7,29,0,0), end_date: DateTime.new(2020,8,27,0,0), location: "à distance", price: 2000},
+  {trainingID: 14, start_date: DateTime.new(2020,8,17,0,0), end_date: DateTime.new(2020,9,15,0,0), location: "à distance", price: 2000},
+  {trainingID: 14, start_date: DateTime.new(2020,10,21,0,0), end_date: DateTime.new(2020,11,19,0,0), location: "à distance", price: 2000},
+  {trainingID: 14, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,1,8,0,0), location: "à distance", price: 2000},
+  {trainingID: 14, start_date: DateTime.new(2021,1,4,0,0), end_date: DateTime.new(2021,2,2,0,0), location: "à distance", price: 2000},
+  {trainingID: 15, start_date: DateTime.new(2020,7,29,0,0), end_date: DateTime.new(2020,10,22,0,0), location: "à distance", price: 2900},
+  {trainingID: 15, start_date: DateTime.new(2020,8,17,0,0), end_date: DateTime.new(2020,11,10,0,0), location: "à distance", price: 2900},
+  {trainingID: 15, start_date: DateTime.new(2020,10,21,0,0), end_date: DateTime.new(2020,1,14,0,0), location: "à distance", price: 2900},
+  {trainingID: 15, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,3,5,0,0), location: "à distance", price: 2900},
+  {trainingID: 15, start_date: DateTime.new(2021,1,4,0,0), end_date: DateTime.new(2021,3,30,0,0), location: "à distance", price: 2900},
+  {trainingID: 16, start_date: DateTime.new(2020,7,29,0,0), end_date: DateTime.new(2020,8,27,0,0), location: "à distance", price: 2000},
+  {trainingID: 16, start_date: DateTime.new(2020,8,17,0,0), end_date: DateTime.new(2020,9,15,0,0), location: "à distance", price: 2000},
+  {trainingID: 16, start_date: DateTime.new(2020,10,21,0,0), end_date: DateTime.new(2020,11,19,0,0), location: "à distance", price: 2000},
+  {trainingID: 16, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,1,8,0,0), location: "à distance", price: 2000},
+  {trainingID: 16, start_date: DateTime.new(2021,1,4,0,0), end_date: DateTime.new(2021,2,2,0,0), location: "à distance", price: 2000},
+  {trainingID: 17, start_date: DateTime.new(2020,7,29,0,0), end_date: DateTime.new(2020,10,22,0,0), location: "à distance", price: 2900},
+  {trainingID: 17, start_date: DateTime.new(2020,8,17,0,0), end_date: DateTime.new(2020,11,10,0,0), location: "à distance", price: 2900},
+  {trainingID: 17, start_date: DateTime.new(2020,10,21,0,0), end_date: DateTime.new(2021,1,14,0,0), location: "à distance", price: 2900},
+  {trainingID: 17, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,3,5,0,0), location: "à distance", price: 2900},
+  {trainingID: 17, start_date: DateTime.new(2021,1,4,0,0), end_date: DateTime.new(2021,3,30,0,0), location: "à distance", price: 2900},
+  {trainingID: 18, start_date: DateTime.new(2020,7,8,0,0), end_date: DateTime.new(2020,8,6,0,0), location: "à distance", price: 2000},
+  {trainingID: 18, start_date: DateTime.new(2020,8,17,0,0), end_date: DateTime.new(2020,9,15,0,0), location: "à distance", price: 2000},
+  {trainingID: 18, start_date: DateTime.new(2020,9,7,0,0), end_date: DateTime.new(2020,10,7,0,0), location: "à distance", price: 2000},
+  {trainingID: 18, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,1,8,0,0), location: "à distance", price: 2000},
+  {trainingID: 18, start_date: DateTime.new(2021,1,20,0,0), end_date: DateTime.new(2021,2,18,0,0), location: "à distance", price: 2000},
+  {trainingID: 19, start_date: DateTime.new(2020,7,8,0,0), end_date: DateTime.new(2020,10,1,0,0), location: "à distance", price: 2900},
+  {trainingID: 19, start_date: DateTime.new(2020,8,17,0,0), end_date: DateTime.new(2020,11,10,0,0), location: "à distance", price: 2900},
+  {trainingID: 19, start_date: DateTime.new(2020,9,7,0,0), end_date: DateTime.new(2020,12,2,0,0), location: "à distance", price: 2900},
+  {trainingID: 19, start_date: DateTime.new(2020,12,2,0,0), end_date: DateTime.new(2021,3,5,0,0), location: "à distance", price: 2900},
+  {trainingID: 19, start_date: DateTime.new(2021,1,20,0,0), end_date: DateTime.new(2021,4,15,0,0), location: "à distance", price: 2900},
+  {trainingID: 20, start_date: "A tout moment de l'année", end_date: "", location: "à distance", price: 3950}
+  ]
+  
+program_array = [ 
   {trainingID: 1, description: "NC", language: "HTML, CSS"},
   {trainingID: 2, description: "Le parcours fullstack se déroule en 12 semaines. Il a pour objectif de permettre à un entrepreneur de créer son projet, à une personne en reconversion d'initier sa nouvelle carrière, ou simplement de compléter son CV pour améliorer son employabilité. Cette formation est ultra intense et vous demandera d'être disponible du lundi au vendredi de 09h00 à 20h00. Comme nous ne sommes pas une école classique, vous pourrez adapter vos horaires en fonction de vos obligations.", language: "HTML, CSS, JavaScript, Ruby, Ruby on Rails, SQL, Git, GitHub"},
   {trainingID: 3, description: "THP Next est une formation de 12 semaines qui vient à la suite de THP code : les élèves ont des notions en Ruby on Rails et ces derniers savent reproduire Airbnb. Cette formation permettra d’engager une carrière professionnelle et promettra à celui ou celle qui la fera l’assurance de débouchés beaucoup plus importants en terme d’emplois ou de freelance. Pour ceux ou celles qui souhaitent créer leur entreprise cela leur permettra d’améliorer leur produit et de le rendre compatible avec les exigences des utilisateurs des années 2020.", language: "JavaScript moderne, ReactJS"},
@@ -99,9 +140,22 @@ program_array = [
   {trainingID: 7, description: "Notre formation Développeur Web est une expérience immersive qui vous fait passer de débutant à Développeur Web en 9 semaines. À la fin de la formation, vous saurez construire des applications web fonctionnelles qui répondent aux besoins de vos utilisateurs, vous saurez collaborer avec d'autres Développeurs, Designers et Product Managers avec le bon workflow et les bonnes pratiques.", language: "HTML, CSS, JavaScript, Ruby, Ruby on Rails, SQL, Git, GitHub"},
   {trainingID: 8, description: "Devenir développeur web, c’est avant tout mettre le doigt dans un univers vaste de technologies et de langages à dompter. Le premier objectif sera donc de vous constituer un socle technique suffisamment étoffé pour appréhender les problématiques du métier. L’objectif de la formation ne se résume pas à ingurgiter les langages jusqu’à plus soif, mais de se développer une capacité à créer. Se spécialiser sur certaines technos, afin de développer un savoir-faire concret permettant de concevoir une application.", language: "HTML, CSS, PHP, JS + spécialisation en Symfony, React ou Wordpress"},
   {trainingID: 9, description: "Devenir développeur web, c’est avant tout mettre le doigt dans un univers vaste de technologies et de langages à dompter. Le premier objectif sera donc de vous constituer un socle technique suffisamment étoffé pour appréhender les problématiques du métier. L’objectif de la formation ne se résume pas à ingurgiter les langages jusqu’à plus soif, mais de se développer une capacité à créer. Se spécialiser sur certaines technos, afin de développer un savoir-faire concret permettant de concevoir une application.", language: "HTML, CSS, JS + spécialisation en React ou API/data"},
+  {trainingID: 10, description: "Notre formation Développeur Web est une expérience immersive qui vous fait passer de débutant à Développeur Web en 9 semaines. À la fin de la formation, vous saurez construire des applications web fonctionnelles qui répondent aux besoins de vos utilisateurs, vous saurez collaborer avec d'autres Développeurs, Designers et Product Managers avec le bon workflow et les bonnes pratiques.", language: "HTML, CSS, JavaScript, Ruby, Ruby on Rails, SQL, Git, GitHub"},
+  {trainingID: 11, description: "Ce programme “socle” vous propose d'acquérir les fondements du développement web avec un focus particulier donné sur JavaScript. L’occasion de se positionner très tôt dans votre parcours de formation sur une techno très appréciée sur le marché pour sa flexibilité et la grande richesse de son écosystème.", language: "HTML, CSS, JavaScript, Node.js, SQL, Git, NoSQL, AJAX"},
+  {trainingID: 12, description: "Cette formation vous propose d’approfondir la création d’interface côté client en JavaScript, à l’aide de React.js, la bibliothèque dont la notoriété n’est plus à prouver. Au-delà de la maîtrise de la library, c’est aussi tout l’écosystème autour du langage que l’on va s’approprier : nouvelles spécifications EcmaScript, outils de build, et tout une série de modules indispensables.", language: "JavaScript, React, Redux, React Hooks"},
+  {trainingID: 13, description: "Cette formation vous propose d’approfondir la création d’interface côté client en JavaScript, à l’aide de React.js, la bibliothèque dont la notoriété n’est plus à prouver. Au-delà de la maîtrise de la library, c’est aussi tout l’écosystème autour du langage que l’on va s’approprier : nouvelles spécifications EcmaScript, outils de build, et tout une série de modules indispensables.", language: "JavaScript, React, Redux, React Hooks"},
+  {trainingID: 14, description: "Les fans de PHP vont adorer cette expédition à travers les fonctionnalités et modules les plus utiles du framework. Pendant cette formation, vous composerez avec toutes les bonnes pratiques de conception web inhérentes au développement avec Symfony 4. Très apprécié par les recruteurs, Symfony est également porté par une des plus grandes communautés PHP.", language: "Symfony 4"},
+  {trainingID: 15, description: "Les fans de PHP vont adorer cette expédition à travers les fonctionnalités et modules les plus utiles du framework. Pendant cette formation, vous composerez avec toutes les bonnes pratiques de conception web inhérentes au développement avec Symfony 4. Très apprécié par les recruteurs, Symfony est également porté par une des plus grandes communautés PHP.", language: "Symfony 4"},
+  {trainingID: 16, description: "Cette formation vous propose d’approfondir la solution WordPress pour le développement de sites web administrables. On va décortiquer la gestion de contenu, et se mesurer aux fonctionnalités avancées de l’outil : la customisation du front avec les thèmes, la customisation du back avec les plugins. Un programme bien complet !", language: "POO PHP, Axios, WP REST API"},
+  {trainingID: 17, description: "Cette formation vous propose d’approfondir la solution WordPress pour le développement de sites web administrables. On va décortiquer la gestion de contenu, et se mesurer aux fonctionnalités avancées de l’outil : la customisation du front avec les thèmes, la customisation du back avec les plugins. Un programme bien complet !", language: "POO PHP, Axios, WP REST API"},
+  {trainingID: 18, description: "Entrez de plain pied dans la problématique qui va nous occuper pendant les prochaines décennies : la data ! Ou ce que l’on appelle plus simplement la gestion de données. Vous serez formés sur les outils vous permettant d’extraire, traiter et interpréter de la data. Une compétence technique transverse que vous serez en mesure d’appliquer sur plusieurs facettes d’un projet web.", language: "Express.js, Hapi.js, NoSQL, GraphQL, Machine Learning, Big Data"},
+  {trainingID: 19, description: "Entrez de plain pied dans la problématique qui va nous occuper pendant les prochaines décennies : la data ! Ou ce que l’on appelle plus simplement la gestion de données. Vous serez formés sur les outils vous permettant d’extraire, traiter et interpréter de la data. Une compétence technique transverse que vous serez en mesure d’appliquer sur plusieurs facettes d’un projet web.", language: "Express.js, Hapi.js, NoSQL, GraphQL, Machine Learning, Big Data"},
+  {trainingID: 20, description: "Avec Educatel, vous pouvez apprendre le métier de développeur web tout en préparant le passage de votre titre professionnel, reconnu par l’Etat. Grâce à notre formation DWWM à distance, notre école vous apporte toutes les connaissances requises pour passer l’examen et obtenir votre titre professionnel de développeur web et web mobile.", language: "HTML, CSS, PHP, Javascript, Angular 9,MySQL, Symphony, Python"},
+  {trainingID: 21, description: "Devenez développeur web junior en 4 mois en maîtrisant les 5 langages les plus demandés sur le marché du travail", language: "HTML, CSS, PHP, Javascript, SQL"},
+  {trainingID: 22, description: "La 3W Academy propose une formation en alternance au métier de Développeur Web permettant de se spécialiser sur les technologies les plus demandées sur le marché : Node.Js et React. Le cœur de ce qui a fait la réussite de la 3W Academy est au rendez-vous : les sessions sont composées de 15 élèves au maximum, une nouvelle session démarrant chaque mois.", language: "Node.Js, React, JavaScript, PHP"},
+  {trainingID: 23, description: "Grâce à La Piscine tu seras en mesure de comprendre la technique qui se cache derrière un siteweb. Du code à la base de données en passant par le serveur, le développement d'un siteweb n'aura plus de secret pour toi.", language: "HTML, CSS, Bootstrap, PHP, Symphony, SQL"}
 ]
-
-# Seed
+# Seed{trainingID: 7, description: "Notre formation Développeur Web est une expérience immersive qui vous fait passer de débutant à Développeur Web en 9 semaines. À la fin de la formation, vous saurez construire des applications web fonctionnelles qui répondent aux besoins de vos utilisateurs, vous saurez collaborer avec d'autres Développeurs, Designers et Product Managers avec le bon workflow et les bonnes pratiques.", language: "HTML, CSS, JavaScript, Ruby, Ruby on Rails, SQL, Git, GitHub"},
 
 User.create(email: 'thp@yopmail.com', password: 'motdepasse', is_admin: 'true', first_name: 'thp', last_name: 'thp', is_school: true)
 User.create(email: 'capsule@yopmail.com', password: 'motdepasse', is_admin: 'true', first_name: 'capsule', last_name: 'capsule', is_school: true)
@@ -119,15 +173,59 @@ User.create(email: 'school@yopmail.com', password: 'motdepasse', is_school: 'tru
 end
 
 22.times do |i|
-  Training.create(name: training_array[i][:name], duration: training_array[i][:duration], description: training_array[i][:description], hours_per_day: training_array[i][:hours_per_day], url: training_array[i][:url], mode: training_array[i][:mode], school_id: training_array[i][:schoolID], tag_list: [training_array[i][:mode],training_array[i][:duration].to_s], background_img: training_array[i][:background_img])
+  training = Training.create(name: training_array[i][:name], duration: training_array[i][:duration], description: training_array[i][:description], hours_per_day: training_array[i][:hours_per_day], url: training_array[i][:url], mode: training_array[i][:mode], school_id: training_array[i][:schoolID], background_img: training_array[i][:background_img])
+
+  duration = training_array[i][:duration].to_i
+
+  if duration <= 10
+    duration = "1-10"
+  elsif duration > 10 && duration <= 20
+    duration = "11-20"
+  elsif duration > 20 && duration <= 30
+    duration = "21-30"
+  elsif duration > 30 && duration <= 40
+    duration = "31-40"
+  elsif duration > 41
+    duration = "41+"
+  end
+  training.update(tag_list: [training_array[i][:mode], duration])
 end
 
-26.times do |i|
-  Session.create(start_date: session_array[i][:start_date], end_date: session_array[i][:end_date], location: session_array[i][:location], price: session_array[i][:price], training_id: session_array[i][:trainingID])
+69.times do |i|
+  session = Session.create(start_date: session_array[i][:start_date], end_date: session_array[i][:end_date], location: session_array[i][:location], price: session_array[i][:price], training_id: session_array[i][:trainingID])
+
+  duration = session.training[:duration].to_i
+  price = session[:price].to_i
+
+  if duration <= 10
+    duration = "1-10"
+  elsif duration > 10 && duration <= 20
+    duration = "11-20"
+  elsif duration > 20 && duration <= 30
+    duration = "21-30"
+  elsif duration > 30 && duration <= 40
+    duration = "31-40"
+  elsif duration > 41
+    duration = "41+"
+  end
+
+  if price <= 1000
+    price = "0-1000"
+  elsif price > 1000 && price <= 2000
+    price = "1001-2000"
+  elsif price > 2000 && price <= 3000
+    price = "2001-3000"
+  elsif price > 3000 && price <= 4000
+    price = "3001-4000"
+  elsif price > 4000
+    price = "4000+"
+  end
+
+  session.training.update(tag_list: [session.training[:mode], duration, price])
 end
 
-8.times do |i|
-  Program.create(description: program_array[i][:description], language: program_array[i][:language], training_id: session_array[i][:trainingID])
+23.times do |i|
+  Program.create(description: program_array[i][:description], language: program_array[i][:language], training_id: program_array[i][:trainingID])
 end
 
 puts "Seed completed !"

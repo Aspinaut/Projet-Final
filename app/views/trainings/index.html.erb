@@ -1,6 +1,6 @@
 <div class="container col-12 mt-5">
   <div class="text-center filters">
-    <h3>Filtres de recherche : </h3>
+    <h4>Filtres de recherche : </h4>
     <br>
     <%= render 'filter_mode' %>
   </div>
@@ -12,11 +12,12 @@
 </div>
 
 <script type="text/javascript">
-  var checkBoxes = document.querySelectorAll(".checkbox");
+  var checkBoxes = document.querySelectorAll(".check_boxes");
+
   var form = document.querySelector('.simple_form');
 
-  for (const check of checkBoxes) {
-  check.addEventListener( 'change', function() {
+  for (const checkBox of checkBoxes) {
+  checkBox.addEventListener( 'change', function() {
     Rails.fire(form, 'submit');
   });
   }

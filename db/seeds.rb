@@ -14,7 +14,7 @@ Training.destroy_all
 Session.destroy_all
 Program.destroy_all
 User.destroy_all
-
+Comment.destroy_all
 # Reset the counters to 0
 ActiveRecord::Base.connection.tables.each do |t|
 ActiveRecord::Base.connection.reset_pk_sequence!(t)
@@ -129,8 +129,8 @@ session_array = [
   {trainingID: 19, start_date: DateTime.new(2021,1,20,0,0), end_date: DateTime.new(2021,4,15,0,0), location: "à distance", price: 2900},
   {trainingID: 20, start_date: "A tout moment de l'année", end_date: "", location: "à distance", price: 3950}
   ]
-  
-program_array = [ 
+
+program_array = [
   {trainingID: 1, description: "NC", language: "HTML, CSS"},
   {trainingID: 2, description: "Le parcours fullstack se déroule en 12 semaines. Il a pour objectif de permettre à un entrepreneur de créer son projet, à une personne en reconversion d'initier sa nouvelle carrière, ou simplement de compléter son CV pour améliorer son employabilité. Cette formation est ultra intense et vous demandera d'être disponible du lundi au vendredi de 09h00 à 20h00. Comme nous ne sommes pas une école classique, vous pourrez adapter vos horaires en fonction de vos obligations.", language: "HTML, CSS, JavaScript, Ruby, Ruby on Rails, SQL, Git, GitHub"},
   {trainingID: 3, description: "THP Next est une formation de 12 semaines qui vient à la suite de THP code : les élèves ont des notions en Ruby on Rails et ces derniers savent reproduire Airbnb. Cette formation permettra d’engager une carrière professionnelle et promettra à celui ou celle qui la fera l’assurance de débouchés beaucoup plus importants en terme d’emplois ou de freelance. Pour ceux ou celles qui souhaitent créer leur entreprise cela leur permettra d’améliorer leur produit et de le rendre compatible avec les exigences des utilisateurs des années 2020.", language: "JavaScript moderne, ReactJS"},

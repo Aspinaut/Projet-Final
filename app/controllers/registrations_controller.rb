@@ -5,12 +5,9 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
     super
-    # add custom create logic here
-    #User.create(email:params[:email], password:params[:password], password_confirmation:params[:password_confirmation], first_name:params[:first_name], last_name:params[:last_name])
   end
 
   def edit
-
   end
 
   def update
@@ -18,7 +15,11 @@ class RegistrationsController < Devise::RegistrationsController
     User.find(current_user.id). update(first_name:params[:user][:first_name], last_name:params[:user][:last_name])
   end
 
-
+  def destroy
+    current_user.comments.destroy_all
+    current_user.destroy
+    redirect_to root_path
+  end
 
   private
 

@@ -22,4 +22,6 @@ class SchoolsController < ApplicationController
   def become_a_school
     current_user.update(is_school: true)
   end
+
+
 end

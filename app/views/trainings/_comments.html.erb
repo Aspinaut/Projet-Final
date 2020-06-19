@@ -1,7 +1,7 @@
 <div class="bg-white rounded box-shadow">
-  <h4 class="card text border-light col-xs-12  mb-3 pb-2 mb-0">Commentaires</h4>
+  <h1 class="card text-center border-light col-xs-12  mb-3 pb-2 mb-0">Commentaires</h1>
   <% @training.comments.each do |comment| %>
-    <div class= "d-flex comment">
+    <div class= "d-flex flex-column comment">
       <div class="row comment_main">
         <div class="col user_avatar">
           <% if comment.user.picture.attached? %>
@@ -44,5 +44,6 @@
         </div>
       </div>
     </div>
+    <hr>
   <% end %>
 </div>
